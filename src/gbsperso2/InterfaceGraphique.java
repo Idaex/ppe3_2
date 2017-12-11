@@ -57,10 +57,18 @@ public class InterfaceGraphique extends javax.swing.JFrame {
         jLabelIdentification = new javax.swing.JLabel();
         jButtonInfos = new javax.swing.JButton();
         jDesktopInfos = new javax.swing.JDesktopPane();
-        jButton3 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        jButtonRetourAccueil = new javax.swing.JButton();
+        jLabelPrenom = new javax.swing.JLabel();
+        jLabelNom = new javax.swing.JLabel();
+        jLabelEmail = new javax.swing.JLabel();
+        jLabelTelephone = new javax.swing.JLabel();
+        jLabelAnneeEntree = new javax.swing.JLabel();
+        jLabelIdentif = new javax.swing.JLabel();
+        jLabelAdresse = new javax.swing.JLabel();
+        jLabelRole = new javax.swing.JLabel();
+        jLabelPosition = new javax.swing.JLabel();
+        jLabelSalaire = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jDesktopPane1 = new javax.swing.JDesktopPane();
         nomMenuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
@@ -68,8 +76,8 @@ public class InterfaceGraphique extends javax.swing.JFrame {
         deconnexionMenuItem = new javax.swing.JMenuItem();
         SortieMenuItem = new javax.swing.JMenuItem();
         jMenuActions = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuInfosPerso = new javax.swing.JMenuItem();
         aideMenu = new javax.swing.JMenu();
         aproposMenuItem = new javax.swing.JMenuItem();
         nomjMenu = new javax.swing.JMenu();
@@ -99,51 +107,133 @@ public class InterfaceGraphique extends javax.swing.JFrame {
 
         jDesktopInfos.setBackground(new java.awt.Color(240, 240, 240));
 
-        jButton3.setText("jButton3");
+        jButtonRetourAccueil.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButtonRetourAccueil.setText("Accueil");
+        jButtonRetourAccueil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRetourAccueilActionPerformed(evt);
+            }
+        });
 
-        jLabel1.setText("jLabel1");
+        jLabelPrenom.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelPrenom.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelPrenom.setText("Prenom");
 
-        jLabel2.setText("jLabel2");
+        jLabelNom.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelNom.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelNom.setText("Nom");
 
-        jCheckBox1.setText("jCheckBox1");
+        jLabelEmail.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelEmail.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelEmail.setText("Email");
 
-        jDesktopInfos.setLayer(jButton3, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopInfos.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopInfos.setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopInfos.setLayer(jCheckBox1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLabelTelephone.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelTelephone.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelTelephone.setText("Téléphone");
+
+        jLabelAnneeEntree.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelAnneeEntree.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelAnneeEntree.setText("AnneeEntree");
+
+        jLabelIdentif.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelIdentif.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelIdentif.setText("Identifiant");
+
+        jLabelAdresse.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelAdresse.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelAdresse.setText("Adresse");
+
+        jLabelRole.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelRole.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelRole.setText("Role");
+
+        jLabelPosition.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelPosition.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelPosition.setText("Position");
+
+        jLabelSalaire.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelSalaire.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelSalaire.setText("Salaire");
+
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton1.setText("Modifier les informations");
+
+        jDesktopInfos.setLayer(jButtonRetourAccueil, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopInfos.setLayer(jLabelPrenom, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopInfos.setLayer(jLabelNom, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopInfos.setLayer(jLabelEmail, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopInfos.setLayer(jLabelTelephone, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopInfos.setLayer(jLabelAnneeEntree, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopInfos.setLayer(jLabelIdentif, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopInfos.setLayer(jLabelAdresse, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopInfos.setLayer(jLabelRole, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopInfos.setLayer(jLabelPosition, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopInfos.setLayer(jLabelSalaire, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopInfos.setLayer(jButton1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         org.jdesktop.layout.GroupLayout jDesktopInfosLayout = new org.jdesktop.layout.GroupLayout(jDesktopInfos);
         jDesktopInfos.setLayout(jDesktopInfosLayout);
         jDesktopInfosLayout.setHorizontalGroup(
             jDesktopInfosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jDesktopInfosLayout.createSequentialGroup()
-                .addContainerGap(196, Short.MAX_VALUE)
-                .add(jLabel1)
-                .add(562, 562, 562)
-                .add(jButton3)
-                .add(272, 272, 272))
-            .add(jDesktopInfosLayout.createSequentialGroup()
-                .add(234, 234, 234)
-                .add(jLabel2)
+                .add(256, 256, 256)
+                .add(jDesktopInfosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                    .add(jLabelAnneeEntree, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
+                    .add(jLabelPrenom, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jLabelNom, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jLabelEmail, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jLabelTelephone, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .add(jCheckBox1)
-                .add(134, 134, 134))
+                .add(jDesktopInfosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jDesktopInfosLayout.createSequentialGroup()
+                        .add(jDesktopInfosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(org.jdesktop.layout.GroupLayout.TRAILING, jLabelIdentif, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 120, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(org.jdesktop.layout.GroupLayout.TRAILING, jLabelAdresse, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 120, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(org.jdesktop.layout.GroupLayout.TRAILING, jLabelSalaire, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 120, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                        .add(293, 293, 293))
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jDesktopInfosLayout.createSequentialGroup()
+                        .add(jDesktopInfosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                            .add(jLabelRole, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(jLabelPosition, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                        .add(113, 113, 113))))
+            .add(jDesktopInfosLayout.createSequentialGroup()
+                .add(jDesktopInfosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jDesktopInfosLayout.createSequentialGroup()
+                        .add(310, 310, 310)
+                        .add(jButtonRetourAccueil, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 500, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(jDesktopInfosLayout.createSequentialGroup()
+                        .add(305, 305, 305)
+                        .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 500, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(340, Short.MAX_VALUE))
         );
         jDesktopInfosLayout.setVerticalGroup(
             jDesktopInfosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jDesktopInfosLayout.createSequentialGroup()
-                .add(jDesktopInfosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jDesktopInfosLayout.createSequentialGroup()
-                        .add(171, 171, 171)
-                        .add(jButton3))
-                    .add(jDesktopInfosLayout.createSequentialGroup()
-                        .add(158, 158, 158)
-                        .add(jLabel1)))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 253, Short.MAX_VALUE)
+                .add(32, 32, 32)
+                .add(jButtonRetourAccueil, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 60, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(96, 96, 96)
                 .add(jDesktopInfosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jLabel2)
-                    .add(jCheckBox1))
-                .add(236, 236, 236))
+                    .add(jLabelPrenom, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 31, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jLabelIdentif, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 28, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .add(45, 45, 45)
+                .add(jDesktopInfosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jLabelAdresse, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 28, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jLabelNom, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 28, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .add(66, 66, 66)
+                .add(jDesktopInfosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jLabelEmail, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jLabelRole, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 28, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .add(59, 59, 59)
+                .add(jDesktopInfosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jLabelTelephone, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 28, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jLabelPosition, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 28, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .add(54, 54, 54)
+                .add(jDesktopInfosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jLabelSalaire, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 28, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jLabelAnneeEntree, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 28, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 57, Short.MAX_VALUE)
+                .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 60, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(72, 72, 72))
         );
 
         jDesktopPane1.setBackground(new java.awt.Color(240, 240, 240));
@@ -196,16 +286,21 @@ public class InterfaceGraphique extends javax.swing.JFrame {
 
         jMenuActions.setText("Actions");
 
-        jMenuItem2.setText("Infos personnelles");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem3.setText("Accueil");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                jMenuItem3ActionPerformed(evt);
             }
         });
-        jMenuActions.add(jMenuItem2);
-
-        jMenuItem3.setText("jMenuItem3");
         jMenuActions.add(jMenuItem3);
+
+        jMenuInfosPerso.setText("Infos personnelles");
+        jMenuInfosPerso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuInfosPersoActionPerformed(evt);
+            }
+        });
+        jMenuActions.add(jMenuInfosPerso);
 
         nomMenuBar.add(jMenuActions);
 
@@ -282,21 +377,43 @@ public class InterfaceGraphique extends javax.swing.JFrame {
     private void jButtonInfosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInfosActionPerformed
         this.desktopPane.setVisible(false);
         this.jDesktopInfos.setVisible(true);
+        this.jButtonRetourAccueil.setVisible(true);
     }//GEN-LAST:event_jButtonInfosActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-      //  jButtonInfos.
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
-    public void connecte(String leNom, String leRole, String laPositionentre){
+    private void jMenuInfosPersoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuInfosPersoActionPerformed
+       jButtonInfos.doClick();
+    }//GEN-LAST:event_jMenuInfosPersoActionPerformed
+
+    private void jButtonRetourAccueilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRetourAccueilActionPerformed
+        this.jButtonInfos.setVisible(false);
+        this.desktopPane.setVisible(true);
+        this.jButtonInfos.setVisible(true);
+        this.jButtonRetourAccueil.setVisible(false);
+    }//GEN-LAST:event_jButtonRetourAccueilActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        jButtonRetourAccueil.doClick();
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    public void connecte(String leNom, Personne lutilisateur){
         //maj de l'etat de la connexion
         this.connecte=true;
         //ajout du nom dans la fenetre
         this.nomjMenu.setText("Connecté en tant que : "+leNom);
         this.nomjMenu.setEnabled(false);
-        this.fileMenu.setText(laPositionentre);
-        this.jLabelIdentification.setText("Bienvenue " + leNom + " vous êtes connecté en tant que "+ leRole );
+        this.fileMenu.setText(lutilisateur.getPosi());
+        this.jLabelIdentification.setText("Bienvenue " + leNom + " vous êtes connecté en tant que "+ lutilisateur.getRoleentr() );
         this.jLabelIdentification.setVisible(true);
         this.jButtonInfos.setVisible(true);
+        this.jLabelPrenom.setText("Prenom : "+lutilisateur.getPrenom());
+        this.jLabelNom.setText("Nom : "+lutilisateur.getNom());
+        this.jLabelEmail.setText("Courriel : "+lutilisateur.getCourriel());
+        this.jLabelTelephone.setText("Téléphone : 0"+lutilisateur.getTelephone().toString());
+        this.jLabelIdentif.setText("Identifiant : "+lutilisateur.getIdentif());
+        this.jLabelAnneeEntree.setText("Année d'entrée : "+lutilisateur.getAnneedentree().toString());
+        this.jLabelSalaire.setText("Salaire : "+lutilisateur.getSalaire().toString());
+        this.jLabelAdresse.setText("Adresse : "+lutilisateur.getAdresse());
+        this.jLabelPosition.setText("Position dans l'entreprise : "+lutilisateur.getPosi());
+        this.jLabelRole.setText("Role dans l'entreprise : "+lutilisateur.getRoleentr());
         
         
     }
@@ -355,17 +472,25 @@ public class InterfaceGraphique extends javax.swing.JFrame {
     private javax.swing.JMenuItem deconnexionMenuItem;
     private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JMenu fileMenu;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonInfos;
-    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JButton jButtonRetourAccueil;
     private javax.swing.JDesktopPane jDesktopInfos;
     private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabelAdresse;
+    private javax.swing.JLabel jLabelAnneeEntree;
+    private javax.swing.JLabel jLabelEmail;
+    private javax.swing.JLabel jLabelIdentif;
     private javax.swing.JLabel jLabelIdentification;
+    private javax.swing.JLabel jLabelNom;
+    private javax.swing.JLabel jLabelPosition;
+    private javax.swing.JLabel jLabelPrenom;
+    private javax.swing.JLabel jLabelRole;
+    private javax.swing.JLabel jLabelSalaire;
+    private javax.swing.JLabel jLabelTelephone;
     private javax.swing.JMenu jMenuActions;
+    private javax.swing.JMenuItem jMenuInfosPerso;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuBar nomMenuBar;
     private javax.swing.JMenu nomjMenu;

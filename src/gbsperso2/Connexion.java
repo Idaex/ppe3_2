@@ -22,7 +22,9 @@ import javax.swing.JPasswordField;
  * @author nc
  */
 public class Connexion extends javax.swing.JDialog {
+
     private InterfaceGraphique fenetre;
+
     /**
      * Creates new form Connexion
      */
@@ -35,7 +37,7 @@ public class Connexion extends javax.swing.JDialog {
         //sur la precedente fenêtre dans fermer connexion
         this.setModal(true);
         //on stocke dans this.fenetre la référence vers la fenetre parente
-        this.fenetre=(InterfaceGraphique)parent;
+        this.fenetre = (InterfaceGraphique) parent;
     }
 
     /**
@@ -135,57 +137,88 @@ public class Connexion extends javax.swing.JDialog {
          * Code ici qui va interroger la base de données
          */
         //Vérification des saisies
-        if (jTextFieldIdentifiant.getText().length()==0 || jPassMDP.getText().length()==0){
+        if (jTextFieldIdentifiant.getText().length() == 0 || jPassMDP.getText().length() == 0) {
             JOptionPane.showMessageDialog(this, "Erreur de saisie, les deux champs doivent être renseignés.");
-            
+
             this.fenetre.deconnecte();
-        }else{
-            
+        } else {
+
             try {
                 //interrogation de la BD pour savoir si l'identifiant/mot de passe est correct
                 //instanciation de la classe Driver du paquetage jdbc de mysql
                 Class.forName("com.mysql.jdbc.Driver");
                 //Chaine de connexion (prise dans l'onglet services)
-                String connexionUrl="jdbc:mysql://localhost/gsbperso?user=admin&password=wxcvbn";
-               
+                String connexionUrl = "jdbc:mysql://localhost/gsbperso?user=admin&password=wxcvbn";
+
                 //etablissement de la connexion
-                Connection maConnexion=(Connection)DriverManager.getConnection(connexionUrl);
-                
+                Connection maConnexion = (Connection) DriverManager.getConnection(connexionUrl);
+
                 //requete
-                Statement requete=maConnexion.createStatement();
-                String identifiant=jTextFieldIdentifiant.getText();
-                String mdp=jPassMDP.getText();
-                
-            
+                Statement requete = maConnexion.createStatement();
+                String identifiant = jTextFieldIdentifiant.getText();
+                String mdp = jPassMDP.getText();
+
                 //application du cryptage md5 au mdp
                 // ici on appelle md5 membre static de la classe outils
-                mdp=Outils.md5(mdp);
-            
-                ResultSet lignesRetournees=requete.executeQuery("select * from Utilisateurs, roles, position_entreprise where identifiant='"+identifiant+"' and mot_de_passe='"+mdp+"'");
-                if (lignesRetournees.next()){
-                    String nom=lignesRetournees.getString("nom");
-                    String role=lignesRetournees.getString("nomr");
-                    String positionentre=lignesRetournees.getString("nomp");
+                mdp = Outils.md5(mdp);
+
+                ResultSet lignesRetournees = requete.executeQuery("select * from utilisateurs where identifiant='" + identifiant + "' and mot_de_passe='" + mdp + "'");
+                if (lignesRetournees.next()) {
+                    String nom = lignesRetournees.getString("nom");
+               //     String role = lignesRetournees.getString("nomr");
+               //    String positionentre = lignesRetournees.getString("nomp");
                     //Modifications de la Mission 2 à placer ici
+                    Personne lutilisateur = new Personne();
+                    lutilisateur.setNom(lignesRetournees.getString("nom"));
+                    lutilisateur.setPrenom(lignesRetournees.getString("prenom"));
+                    lutilisateur.setAdresse(lignesRetournees.getString("adresse_ville"));
+                    lutilisateur.setAnneedentree(lignesRetournees.getInt("annee_entree"));
+                    lutilisateur.setIdentif(lignesRetournees.getString("identifiant"));
+                    lutilisateur.setCourriel(lignesRetournees.getString("email"));
+                    lutilisateur.setMdp(lignesRetournees.getString("mot_de_passe"));
+                    lutilisateur.setRoleentreprise(lignesRetournees.getInt("idrole"));
+                    lutilisateur.setPositionentreprise(lignesRetournees.getInt("idposition"));
+                    lutilisateur.setTelephone(lignesRetournees.getInt("telephone"));
+                    lutilisateur.setSalaire(lignesRetournees.getInt("salaire"));
+
+                    if (lutilisateur.getPositionentreprise() == 1) {
+                        lutilisateur.setPosi("Dirigeant");
+                    } else {
+                        if (lutilisateur.getPositionentreprise() == 2) {
+                            lutilisateur.setPosi("Cadre");
+                        } else {
+                            if (lutilisateur.getPositionentreprise() == 3) {
+                                lutilisateur.setPosi("Non-cadre");
+                            }
+                        }
+                    }
                     
+                    if (lutilisateur.getRoleentreprise() == 1) {
+                        lutilisateur.setRoleentr("Directeur");
+                    } else {
+                        if (lutilisateur.getRoleentreprise() == 2) {
+                            lutilisateur.setRoleentr("Responsable");
+                        } else {
+                            if (lutilisateur.getRoleentreprise() == 3) {
+                                lutilisateur.setRoleentr("Employé");
+                            }
+                        }
+                    }
                     
-                    this.fenetre.connecte(nom,role,positionentre);
+                    this.fenetre.connecte(nom, lutilisateur);
                     this.setVisible(false);
                     this.fenetre.majConnexion();
-                    
-                }else{
+
+                } else {
                     JOptionPane.showMessageDialog(rootPane, "identifiant ou mot de passe incorrect");
                 };
-                
-                
+
             } catch (ClassNotFoundException ex) {
-                JOptionPane.showMessageDialog(rootPane, "Classe de connexion mysql non trouvee..."+ex.toString());
-            }
-             catch (SQLException ex) {
-                JOptionPane.showMessageDialog(rootPane, "SQL exception ... "+ex.toString());
-            }
-            catch (NoSuchAlgorithmException ex) {
-                    Logger.getLogger(Connexion.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(rootPane, "Classe de connexion mysql non trouvee..." + ex.toString());
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(rootPane, "SQL exception ... " + ex.toString());
+            } catch (NoSuchAlgorithmException ex) {
+                Logger.getLogger(Connexion.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         }
