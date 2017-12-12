@@ -23,10 +23,27 @@ public class Personne {
     private String mdp;
     private String roleentr;
     private String posi;
+    
+    public Personne(String nom, String prenom, String courriel, String adresse, Integer telephone, Integer anneedentree, Integer roleentreprise, Integer positionentreprise, Integer salaire, String identif, String mdp, String roleentr, String posi) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.courriel = courriel;
+        this.adresse = adresse;
+        this.telephone = telephone;
+        this.anneedentree = anneedentree;
+        this.roleentreprise = roleentreprise;
+        this.positionentreprise = positionentreprise;
+        this.salaire = salaire;
+        this.identif = identif;
+        this.mdp = mdp;
+        this.roleentr = roleentr;
+        this.posi = posi;
+    }
 
     public String getIdentif() {
         return identif;
     }
+
 
     public String getRoleentr() {
         return roleentr;

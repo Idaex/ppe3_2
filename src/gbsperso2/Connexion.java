@@ -24,7 +24,6 @@ import javax.swing.JPasswordField;
 public class Connexion extends javax.swing.JDialog {
 
     private InterfaceGraphique fenetre;
-
     /**
      * Creates new form Connexion
      */
@@ -157,7 +156,7 @@ public class Connexion extends javax.swing.JDialog {
                 Statement requete = maConnexion.createStatement();
                 String identifiant = jTextFieldIdentifiant.getText();
                 String mdp = jPassMDP.getText();
-
+                String motdepass = mdp;
                 //application du cryptage md5 au mdp
                 // ici on appelle md5 membre static de la classe outils
                 mdp = Outils.md5(mdp);
@@ -175,7 +174,7 @@ public class Connexion extends javax.swing.JDialog {
                     lutilisateur.setAnneedentree(lignesRetournees.getInt("annee_entree"));
                     lutilisateur.setIdentif(lignesRetournees.getString("identifiant"));
                     lutilisateur.setCourriel(lignesRetournees.getString("email"));
-                    lutilisateur.setMdp(lignesRetournees.getString("mot_de_passe"));
+                    lutilisateur.setMdp(motdepass);
                     lutilisateur.setRoleentreprise(lignesRetournees.getInt("idrole"));
                     lutilisateur.setPositionentreprise(lignesRetournees.getInt("idposition"));
                     lutilisateur.setTelephone(lignesRetournees.getInt("telephone"));
@@ -204,11 +203,10 @@ public class Connexion extends javax.swing.JDialog {
                             }
                         }
                     }
-                    
-                    this.fenetre.connecte(nom, lutilisateur);
+                    this.fenetre.connecte(lutilisateur);
                     this.setVisible(false);
                     this.fenetre.majConnexion();
-
+                    
                 } else {
                     JOptionPane.showMessageDialog(rootPane, "identifiant ou mot de passe incorrect");
                 };
