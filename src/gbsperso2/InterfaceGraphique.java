@@ -11,27 +11,29 @@ import javax.swing.JOptionPane;
  * @author nc
  */
 public class InterfaceGraphique extends javax.swing.JFrame {
+
     /**
      * attribut qui indique si l'etudiant est connecté ou non
      */
     private boolean connecte;
     public Personne leUtilisateur;
-    
+
     /**
      * interface graphique
      */
     private Connexion fenConnexion;
     private Deconnexion fenDeconnexion;
     private ModifInfos fenModifInfos;
+    private AjoutUtilisateur fenAjoutUtilisateur;
 
     /**
      * constructeur : Creates new form InterfaceGraphique
-     * 
+     *
      */
     public InterfaceGraphique() {
         initComponents();
         //par defaut, la connexion est inactive
-        this.connecte=false;
+        this.connecte = false;
         //element du menu de deconnexion grisé
         this.majConnexion();
         //centrage
@@ -42,6 +44,12 @@ public class InterfaceGraphique extends javax.swing.JFrame {
         this.jDesktopInfos.setVisible(false);
         this.jButtonInfos.setVisible(false);
         this.jMenuActions.setVisible(false);
+        jButtonAjoutUtilisateur.setVisible(false);
+        jMenuAjoutUtilisateur.setVisible(false);
+        jButtonGererLesRoles.setVisible(false);
+        jMenuItemGérerLesRoles.setVisible(false);
+        jMenuItemGererLesPositions.setVisible(false);
+        jButtonGererLesPositions.setVisible(false);
 
     }
 
@@ -58,6 +66,9 @@ public class InterfaceGraphique extends javax.swing.JFrame {
         desktopPane = new javax.swing.JDesktopPane();
         jLabelIdentification = new javax.swing.JLabel();
         jButtonInfos = new javax.swing.JButton();
+        jButtonAjoutUtilisateur = new javax.swing.JButton();
+        jButtonGererLesRoles = new javax.swing.JButton();
+        jButtonGererLesPositions = new javax.swing.JButton();
         jDesktopInfos = new javax.swing.JDesktopPane();
         jButtonRetourAccueil = new javax.swing.JButton();
         jLabelPrenom = new javax.swing.JLabel();
@@ -70,8 +81,7 @@ public class InterfaceGraphique extends javax.swing.JFrame {
         jLabelRole = new javax.swing.JLabel();
         jLabelPosition = new javax.swing.JLabel();
         jLabelSalaire = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButtonValiderLesModifs = new javax.swing.JButton();
+        jButtonModifInfos = new javax.swing.JButton();
         jDesktopPane1 = new javax.swing.JDesktopPane();
         nomMenuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
@@ -79,9 +89,11 @@ public class InterfaceGraphique extends javax.swing.JFrame {
         deconnexionMenuItem = new javax.swing.JMenuItem();
         SortieMenuItem = new javax.swing.JMenuItem();
         jMenuActions = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItemAccueil = new javax.swing.JMenuItem();
         jMenuInfosPerso = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItemGérerLesRoles = new javax.swing.JMenuItem();
+        jMenuItemGererLesPositions = new javax.swing.JMenuItem();
+        jMenuAjoutUtilisateur = new javax.swing.JMenuItem();
         aideMenu = new javax.swing.JMenu();
         aproposMenuItem = new javax.swing.JMenuItem();
         nomjMenu = new javax.swing.JMenu();
@@ -109,6 +121,26 @@ public class InterfaceGraphique extends javax.swing.JFrame {
         });
         desktopPane.add(jButtonInfos);
         jButtonInfos.setBounds(120, 170, 890, 70);
+
+        jButtonAjoutUtilisateur.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButtonAjoutUtilisateur.setText("Ajouter un utilisateur");
+        jButtonAjoutUtilisateur.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAjoutUtilisateurActionPerformed(evt);
+            }
+        });
+        desktopPane.add(jButtonAjoutUtilisateur);
+        jButtonAjoutUtilisateur.setBounds(120, 490, 890, 70);
+
+        jButtonGererLesRoles.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButtonGererLesRoles.setText("Gérer les roles des utilisateurs");
+        desktopPane.add(jButtonGererLesRoles);
+        jButtonGererLesRoles.setBounds(120, 330, 890, 70);
+
+        jButtonGererLesPositions.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButtonGererLesPositions.setText("Gérer les positions");
+        desktopPane.add(jButtonGererLesPositions);
+        jButtonGererLesPositions.setBounds(120, 330, 890, 70);
 
         jDesktopInfos.setBackground(new java.awt.Color(240, 240, 240));
 
@@ -160,15 +192,13 @@ public class InterfaceGraphique extends javax.swing.JFrame {
         jLabelSalaire.setForeground(new java.awt.Color(255, 255, 255));
         jLabelSalaire.setText("Salaire");
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton1.setText("Modifier les informations");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonModifInfos.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButtonModifInfos.setText("Modifier les informations");
+        jButtonModifInfos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonModifInfosActionPerformed(evt);
             }
         });
-
-        jButtonValiderLesModifs.setText("jButton2");
 
         jDesktopInfos.setLayer(jButtonRetourAccueil, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopInfos.setLayer(jLabelPrenom, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -181,8 +211,7 @@ public class InterfaceGraphique extends javax.swing.JFrame {
         jDesktopInfos.setLayer(jLabelRole, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopInfos.setLayer(jLabelPosition, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopInfos.setLayer(jLabelSalaire, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopInfos.setLayer(jButton1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopInfos.setLayer(jButtonValiderLesModifs, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopInfos.setLayer(jButtonModifInfos, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         org.jdesktop.layout.GroupLayout jDesktopInfosLayout = new org.jdesktop.layout.GroupLayout(jDesktopInfos);
         jDesktopInfos.setLayout(jDesktopInfosLayout);
@@ -215,18 +244,12 @@ public class InterfaceGraphique extends javax.swing.JFrame {
             .add(jDesktopInfosLayout.createSequentialGroup()
                 .add(jDesktopInfosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jDesktopInfosLayout.createSequentialGroup()
-                        .add(jDesktopInfosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jDesktopInfosLayout.createSequentialGroup()
-                                .add(310, 310, 310)
-                                .add(jButtonRetourAccueil, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 500, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                            .add(jDesktopInfosLayout.createSequentialGroup()
-                                .add(305, 305, 305)
-                                .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 500, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                        .add(0, 328, Short.MAX_VALUE))
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jDesktopInfosLayout.createSequentialGroup()
-                        .add(0, 0, Short.MAX_VALUE)
-                        .add(jButtonValiderLesModifs)))
-                .addContainerGap())
+                        .add(310, 310, 310)
+                        .add(jButtonRetourAccueil, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 500, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(jDesktopInfosLayout.createSequentialGroup()
+                        .add(305, 305, 305)
+                        .add(jButtonModifInfos, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 500, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(340, Short.MAX_VALUE))
         );
         jDesktopInfosLayout.setVerticalGroup(
             jDesktopInfosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -254,10 +277,8 @@ public class InterfaceGraphique extends javax.swing.JFrame {
                     .add(jLabelSalaire, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 28, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(jLabelAnneeEntree, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 28, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 57, Short.MAX_VALUE)
-                .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 60, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(34, 34, 34)
-                .add(jButtonValiderLesModifs)
-                .addContainerGap())
+                .add(jButtonModifInfos, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 60, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(72, 72, 72))
         );
 
         jDesktopPane1.setBackground(new java.awt.Color(240, 240, 240));
@@ -310,13 +331,13 @@ public class InterfaceGraphique extends javax.swing.JFrame {
 
         jMenuActions.setText("Actions");
 
-        jMenuItem3.setText("Accueil");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItemAccueil.setText("Accueil");
+        jMenuItemAccueil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                jMenuItemAccueilActionPerformed(evt);
             }
         });
-        jMenuActions.add(jMenuItem3);
+        jMenuActions.add(jMenuItemAccueil);
 
         jMenuInfosPerso.setText("Infos personnelles");
         jMenuInfosPerso.addActionListener(new java.awt.event.ActionListener() {
@@ -326,13 +347,24 @@ public class InterfaceGraphique extends javax.swing.JFrame {
         });
         jMenuActions.add(jMenuInfosPerso);
 
-        jMenuItem2.setText("Gérer les positions");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItemGérerLesRoles.setText("Gérer les roles");
+        jMenuItemGérerLesRoles.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                jMenuItemGérerLesRolesActionPerformed(evt);
             }
         });
-        jMenuActions.add(jMenuItem2);
+        jMenuActions.add(jMenuItemGérerLesRoles);
+
+        jMenuItemGererLesPositions.setText("Gérer les positions");
+        jMenuItemGererLesPositions.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemGererLesPositionsActionPerformed(evt);
+            }
+        });
+        jMenuActions.add(jMenuItemGererLesPositions);
+
+        jMenuAjoutUtilisateur.setText("Ajouter un utilisateur");
+        jMenuActions.add(jMenuAjoutUtilisateur);
 
         nomMenuBar.add(jMenuActions);
 
@@ -389,20 +421,20 @@ public class InterfaceGraphique extends javax.swing.JFrame {
 
     private void connexionMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_connexionMenuItemActionPerformed
         // TODO add your handling code here:
-       
+
         /**
-         * création de la fenetre de connexion et attachement de cette dernière à l'interface
-         * maj de connecte en retour
-        */
-        this.fenConnexion=new Connexion(this, true);
+         * création de la fenetre de connexion et attachement de cette dernière
+         * à l'interface maj de connecte en retour
+         */
+        this.fenConnexion = new Connexion(this, true);
         this.fenConnexion.setVisible(true);
-        
+
         //JOptionPane.showMessageDialog(this, "cc");
     }//GEN-LAST:event_connexionMenuItemActionPerformed
 
     private void deconnexionMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deconnexionMenuItemActionPerformed
         // TODO add your handling code here:
-        fenDeconnexion=new Deconnexion(this, true);
+        fenDeconnexion = new Deconnexion(this, true);
         this.fenDeconnexion.setVisible(true);
     }//GEN-LAST:event_deconnexionMenuItemActionPerformed
 
@@ -410,10 +442,11 @@ public class InterfaceGraphique extends javax.swing.JFrame {
         this.desktopPane.setVisible(false);
         this.jDesktopInfos.setVisible(true);
         this.jButtonRetourAccueil.setVisible(true);
+        this.jButtonModifInfos.setVisible(true);
     }//GEN-LAST:event_jButtonInfosActionPerformed
 
     private void jMenuInfosPersoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuInfosPersoActionPerformed
-       jButtonInfos.doClick();
+        jButtonInfos.doClick();
     }//GEN-LAST:event_jMenuInfosPersoActionPerformed
 
     private void jButtonRetourAccueilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRetourAccueilActionPerformed
@@ -421,80 +454,106 @@ public class InterfaceGraphique extends javax.swing.JFrame {
         this.desktopPane.setVisible(true);
         this.jButtonInfos.setVisible(true);
         this.jButtonRetourAccueil.setVisible(false);
+        this.jButtonModifInfos.setVisible(false);
     }//GEN-LAST:event_jButtonRetourAccueilActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void jMenuItemAccueilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAccueilActionPerformed
         jButtonRetourAccueil.doClick();
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_jMenuItemAccueilActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    private void jMenuItemGererLesPositionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemGererLesPositionsActionPerformed
+        jButtonGererLesPositions.doClick();
+    }//GEN-LAST:event_jMenuItemGererLesPositionsActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       this.fenModifInfos = new ModifInfos(this, true, leUtilisateur);
-       fenModifInfos.setVisible(true);
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
-    public void connecte(Personne lutilisateur){
+    private void jButtonModifInfosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModifInfosActionPerformed
+        this.fenModifInfos = new ModifInfos(this, true, leUtilisateur);
+        fenModifInfos.setVisible(true);
+
+    }//GEN-LAST:event_jButtonModifInfosActionPerformed
+
+    private void jButtonAjoutUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAjoutUtilisateurActionPerformed
+        this.fenAjoutUtilisateur = new AjoutUtilisateur(this, true);
+        fenAjoutUtilisateur.setVisible(true);
+    }//GEN-LAST:event_jButtonAjoutUtilisateurActionPerformed
+
+    private void jMenuItemGérerLesRolesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemGérerLesRolesActionPerformed
+        jButtonGererLesRoles.doClick();
+    }//GEN-LAST:event_jMenuItemGérerLesRolesActionPerformed
+    public void connecte(Personne lutilisateur) {
         //maj de l'etat de la connexion
-        this.connecte=true;
+        this.connecte = true;
         //ajout du nom dans la fenetre
-        this.nomjMenu.setText("Connecté en tant que : "+lutilisateur.getNom());
+        this.nomjMenu.setText("Connecté en tant que : " + lutilisateur.getNom());
         this.nomjMenu.setEnabled(false);
         this.fileMenu.setText(lutilisateur.getPosi());
-        this.jLabelIdentification.setText("Bienvenue " + lutilisateur.getNom() + " vous êtes connecté en tant que "+ lutilisateur.getRoleentr() );
+        this.jLabelIdentification.setText("Bienvenue " + lutilisateur.getNom() + " vous êtes connecté en tant que " + lutilisateur.getRoleentr());
+        this.jLabelPrenom.setText("Prenom : " + lutilisateur.getPrenom());
+        this.jLabelNom.setText("Nom : " + lutilisateur.getNom());
+        this.jLabelEmail.setText("Courriel : " + lutilisateur.getCourriel());
+        this.jLabelTelephone.setText("Téléphone : 0" + lutilisateur.getTelephone().toString());
+        this.jLabelIdentif.setText("Identifiant : " + lutilisateur.getIdentif());
+        this.jLabelAnneeEntree.setText("Année d'entrée : " + lutilisateur.getAnneedentree().toString());
+        this.jLabelSalaire.setText("Salaire : " + lutilisateur.getSalaire().toString());
+        this.jLabelAdresse.setText("Adresse : " + lutilisateur.getAdresse());
+        this.jLabelPosition.setText("Position dans l'entreprise : " + lutilisateur.getPosi());
+        this.jLabelRole.setText("Role dans l'entreprise : " + lutilisateur.getRoleentr());
+        this.jMenuActions.setVisible(true);
         this.jLabelIdentification.setVisible(true);
         this.jButtonInfos.setVisible(true);
-        this.jLabelPrenom.setText("Prenom : "+lutilisateur.getPrenom());
-        this.jLabelNom.setText("Nom : "+lutilisateur.getNom());
-        this.jLabelEmail.setText("Courriel : "+lutilisateur.getCourriel());
-        this.jLabelTelephone.setText("Téléphone : 0"+lutilisateur.getTelephone().toString());
-        this.jLabelIdentif.setText("Identifiant : "+lutilisateur.getIdentif());
-        this.jLabelAnneeEntree.setText("Année d'entrée : "+lutilisateur.getAnneedentree().toString());
-        this.jLabelSalaire.setText("Salaire : "+lutilisateur.getSalaire().toString());
-        this.jLabelAdresse.setText("Adresse : "+lutilisateur.getAdresse());
-        this.jLabelPosition.setText("Position dans l'entreprise : "+lutilisateur.getPosi());
-        this.jLabelRole.setText("Role dans l'entreprise : "+lutilisateur.getRoleentr());
-        this.jMenuActions.setVisible(true);
-        leUtilisateur=lutilisateur;
-        
-        
+        leUtilisateur = lutilisateur;
+        if (leUtilisateur.getRoleentr() == "Directeur") {
+            jButtonAjoutUtilisateur.setVisible(true);
+            jMenuAjoutUtilisateur.setVisible(true);
+            jButtonGererLesRoles.setVisible(true);
+            jMenuItemGérerLesRoles.setVisible(true);
+        }
+        if (leUtilisateur.getRoleentr() == "Responsable") {
+            jMenuItemGererLesPositions.setVisible(true);
+            jButtonGererLesPositions.setVisible(true);
+        }
     }
-    public void deconnecte(){
-        this.connecte=false;
+
+    public void deconnecte() {
+        this.connecte = false;
         this.nomjMenu.setText(null);
         this.fileMenu.setText("Utilisateurs");
         this.jLabelIdentification.setVisible(false);
         this.jDesktopInfos.setVisible(false);
         this.jButtonInfos.setVisible(false);
         this.jMenuActions.setVisible(false);
+        this.jButtonAjoutUtilisateur.setVisible(false);
+        jButtonGererLesRoles.setVisible(false);
+        jMenuItemGérerLesRoles.setVisible(false);
+        jMenuItemGererLesPositions.setVisible(false);
+        jButtonGererLesPositions.setVisible(false);
+
     }
-    public void majConnexion(){
+
+    public void majConnexion() {
         deconnexionMenuItem.setEnabled(this.connecte);
         connexionMenuItem.setEnabled(!this.connecte);
     }
-    
-    public void majModifInfos(){
-        this.nomjMenu.setText("Connecté en tant que : "+leUtilisateur.getNom());
+
+    public void majModifInfos() {
+        this.nomjMenu.setText("Connecté en tant que : " + leUtilisateur.getNom());
         this.nomjMenu.setEnabled(false);
         this.fileMenu.setText(leUtilisateur.getPosi());
-        this.jLabelIdentification.setText("Bienvenue " + leUtilisateur.getNom() + " vous êtes connecté en tant que "+ leUtilisateur.getRoleentr() );
+        this.jLabelIdentification.setText("Bienvenue " + leUtilisateur.getNom() + " vous êtes connecté en tant que " + leUtilisateur.getRoleentr());
         this.jLabelIdentification.setVisible(true);
         this.jButtonInfos.setVisible(true);
-        this.jLabelPrenom.setText("Prenom : "+leUtilisateur.getPrenom());
-        this.jLabelNom.setText("Nom : "+leUtilisateur.getNom());
-        this.jLabelEmail.setText("Courriel : "+leUtilisateur.getCourriel());
-        this.jLabelTelephone.setText("Téléphone : 0"+leUtilisateur.getTelephone().toString());
-        this.jLabelIdentif.setText("Identifiant : "+leUtilisateur.getIdentif());
-        this.jLabelAnneeEntree.setText("Année d'entrée : "+leUtilisateur.getAnneedentree().toString());
-        this.jLabelSalaire.setText("Salaire : "+leUtilisateur.getSalaire().toString());
-        this.jLabelAdresse.setText("Adresse : "+leUtilisateur.getAdresse());
-        this.jLabelPosition.setText("Position dans l'entreprise : "+leUtilisateur.getPosi());
-        this.jLabelRole.setText("Role dans l'entreprise : "+leUtilisateur.getRoleentr());
+        this.jLabelPrenom.setText("Prenom : " + leUtilisateur.getPrenom());
+        this.jLabelNom.setText("Nom : " + leUtilisateur.getNom());
+        this.jLabelEmail.setText("Courriel : " + leUtilisateur.getCourriel());
+        this.jLabelTelephone.setText("Téléphone : 0" + leUtilisateur.getTelephone().toString());
+        this.jLabelIdentif.setText("Identifiant : " + leUtilisateur.getIdentif());
+        this.jLabelAnneeEntree.setText("Année d'entrée : " + leUtilisateur.getAnneedentree().toString());
+        this.jLabelSalaire.setText("Salaire : " + leUtilisateur.getSalaire().toString());
+        this.jLabelAdresse.setText("Adresse : " + leUtilisateur.getAdresse());
+        this.jLabelPosition.setText("Position dans l'entreprise : " + leUtilisateur.getPosi());
+        this.jLabelRole.setText("Role dans l'entreprise : " + leUtilisateur.getRoleentr());
         this.jMenuActions.setVisible(true);
     }
-    
+
     /**
      * @param args the command line arguments
      */
@@ -537,10 +596,12 @@ public class InterfaceGraphique extends javax.swing.JFrame {
     private javax.swing.JMenuItem deconnexionMenuItem;
     private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JMenu fileMenu;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButtonAjoutUtilisateur;
+    private javax.swing.JButton jButtonGererLesPositions;
+    private javax.swing.JButton jButtonGererLesRoles;
     private javax.swing.JButton jButtonInfos;
+    private javax.swing.JButton jButtonModifInfos;
     private javax.swing.JButton jButtonRetourAccueil;
-    private javax.swing.JButton jButtonValiderLesModifs;
     private javax.swing.JDesktopPane jDesktopInfos;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabelAdresse;
@@ -555,10 +616,12 @@ public class InterfaceGraphique extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelSalaire;
     private javax.swing.JLabel jLabelTelephone;
     private javax.swing.JMenu jMenuActions;
+    private javax.swing.JMenuItem jMenuAjoutUtilisateur;
     private javax.swing.JMenuItem jMenuInfosPerso;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItemAccueil;
+    private javax.swing.JMenuItem jMenuItemGererLesPositions;
+    private javax.swing.JMenuItem jMenuItemGérerLesRoles;
     private javax.swing.JMenuBar nomMenuBar;
     private javax.swing.JMenu nomjMenu;
     // End of variables declaration//GEN-END:variables

@@ -30,7 +30,9 @@ public class ModifInfos extends javax.swing.JDialog {
     public ModifInfos(java.awt.Frame parent, boolean modal, Personne unUtilisateur) {
         super(parent, modal);
         initComponents();
+        //positionnement au milieu de la fenetre parente
         this.setLocationRelativeTo(parent);
+        //on stocke dans this.fenetre la référence vers la fenetre parente
         this.fenetre = (InterfaceGraphique) parent;
         jTextFieldRole.setVisible(false);
         jTextFieldPosition.setVisible(false);

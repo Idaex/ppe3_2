@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JDialogFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="jLabelSalaire1" min="-2" pref="189" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="jLabelAnneeEntree1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jTextFieldAnneeEntree" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabelPrenom1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldPrenom" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabelNom1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldNom" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabelEmail1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabelTelephone1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jTextFieldTelephone" min="-2" pref="104" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldEmail" min="-2" pref="104" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Component id="jButtonReinitialiser" min="-2" pref="205" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabelRole1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelAdresse1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelIdentifiant1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelPosition1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelMdp1" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jTextFieldAdresse" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jTextFieldIdentifiant" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jComboBoxRole" alignment="0" pref="140" max="32767" attributes="0"/>
+                          <Component id="jComboBoxPosition" max="32767" attributes="0"/>
+                          <Component id="jTextFieldMdp" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Component id="jButtonCalculeSalaire" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jButtonCreerUtilisateur" alignment="1" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace pref="34" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jTextFieldNom" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelNom1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelIdentifiant1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldIdentifiant" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jTextFieldPrenom" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelPrenom1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelMdp1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldMdp" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jTextFieldEmail" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelEmail1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelAdresse1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldAdresse" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabelTelephone1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldTelephone" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelRole1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jComboBoxRole" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jTextFieldAnneeEntree" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelAnneeEntree1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelPosition1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jComboBoxPosition" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="49" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabelSalaire1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButtonCalculeSalaire" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jButtonReinitialiser" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                  <Component id="jButtonCreerUtilisateur" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JTextField" name="jTextFieldNom">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldPrenom">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldEmail">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldTelephone">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldAnneeEntree">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelNom1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Nom :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelPrenom1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Prenom :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelEmail1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Courriel :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelTelephone1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="T&#xe9;l&#xe9;phone :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelAnneeEntree1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ann&#xe9;e d&apos;entr&#xe9;e :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelIdentifiant1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Identifiant :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldIdentifiant">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelAdresse1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Adresse :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldAdresse">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelRole1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Role :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="jComboBoxRole">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="3">
+            <StringItem index="0" value="Directeur"/>
+            <StringItem index="1" value="Responsable"/>
+            <StringItem index="2" value="Employe"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelPosition1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Position :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="jComboBoxPosition">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="3">
+            <StringItem index="0" value="Dirigeant&#x9;"/>
+            <StringItem index="1" value="Cadre"/>
+            <StringItem index="2" value="Non-cadre"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonReinitialiser">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="R&#xe9;initialiser les champs"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonReinitialiserActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonCreerUtilisateur">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cr&#xe9;er l&apos;utilisateur"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonCreerUtilisateurActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelMdp1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Mot de passe :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldMdp">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelSalaire1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Salaire : ? euros"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonCalculeSalaire">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Calculer le salaire"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonCalculeSalaireActionPerformed"/>
+      </Events>
+    </Component>
+  </SubComponents>
+</Form>
