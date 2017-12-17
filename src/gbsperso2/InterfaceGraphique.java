@@ -25,6 +25,7 @@ public class InterfaceGraphique extends javax.swing.JFrame {
     private Deconnexion fenDeconnexion;
     private ModifInfos fenModifInfos;
     private AjoutUtilisateur fenAjoutUtilisateur;
+    private ModifRole fenModifRole;
 
     /**
      * constructeur : Creates new form InterfaceGraphique
@@ -133,7 +134,12 @@ public class InterfaceGraphique extends javax.swing.JFrame {
         jButtonAjoutUtilisateur.setBounds(120, 490, 890, 70);
 
         jButtonGererLesRoles.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButtonGererLesRoles.setText("Gérer les roles des utilisateurs");
+        jButtonGererLesRoles.setText("Gérer le role des utilisateurs");
+        jButtonGererLesRoles.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonGererLesRolesActionPerformed(evt);
+            }
+        });
         desktopPane.add(jButtonGererLesRoles);
         jButtonGererLesRoles.setBounds(120, 330, 890, 70);
 
@@ -479,9 +485,15 @@ public class InterfaceGraphique extends javax.swing.JFrame {
     private void jMenuItemGérerLesRolesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemGérerLesRolesActionPerformed
         jButtonGererLesRoles.doClick();
     }//GEN-LAST:event_jMenuItemGérerLesRolesActionPerformed
+
+    private void jButtonGererLesRolesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGererLesRolesActionPerformed
+        this.fenModifRole = new ModifRole(this, true);
+        fenModifRole.setVisible(true);
+    }//GEN-LAST:event_jButtonGererLesRolesActionPerformed
     public void connecte(Personne lutilisateur) {
         //maj de l'etat de la connexion
         this.connecte = true;
+        this.desktopPane.setVisible(true);
         //ajout du nom dans la fenetre
         this.nomjMenu.setText("Connecté en tant que : " + lutilisateur.getNom());
         this.nomjMenu.setEnabled(false);
