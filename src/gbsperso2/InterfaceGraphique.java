@@ -26,6 +26,7 @@ public class InterfaceGraphique extends javax.swing.JFrame {
     private ModifInfos fenModifInfos;
     private AjoutUtilisateur fenAjoutUtilisateur;
     private ModifRole fenModifRole;
+    private ModifPosition fenModifPosition;
 
     /**
      * constructeur : Creates new form InterfaceGraphique
@@ -145,6 +146,11 @@ public class InterfaceGraphique extends javax.swing.JFrame {
 
         jButtonGererLesPositions.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButtonGererLesPositions.setText("Gérer les positions");
+        jButtonGererLesPositions.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonGererLesPositionsActionPerformed(evt);
+            }
+        });
         desktopPane.add(jButtonGererLesPositions);
         jButtonGererLesPositions.setBounds(120, 330, 890, 70);
 
@@ -490,6 +496,11 @@ public class InterfaceGraphique extends javax.swing.JFrame {
         this.fenModifRole = new ModifRole(this, true);
         fenModifRole.setVisible(true);
     }//GEN-LAST:event_jButtonGererLesRolesActionPerformed
+
+    private void jButtonGererLesPositionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGererLesPositionsActionPerformed
+        this.fenModifPosition = new ModifPosition(this, true);
+        fenModifPosition.setVisible(true);
+    }//GEN-LAST:event_jButtonGererLesPositionsActionPerformed
     public void connecte(Personne lutilisateur) {
         //maj de l'etat de la connexion
         this.connecte = true;

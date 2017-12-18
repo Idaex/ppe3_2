@@ -169,7 +169,6 @@ public class ModifRole extends javax.swing.JDialog {
             int nombreLignes = lignesRet.getRow();
             //on replace le curseur avant la première ligne 
             lignesRet.beforeFirst();
-            System.out.println("Ce ResultSet contient " + nombreLignes + " lignes.");
 
             if (nombreLignes == 0) {
                 JOptionPane.showMessageDialog(rootPane, "Aucun utilisateur correspondant trouvé");

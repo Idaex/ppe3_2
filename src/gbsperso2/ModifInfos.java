@@ -341,6 +341,8 @@ public class ModifInfos extends javax.swing.JDialog {
             }
         });
     }
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonReinitialiser;

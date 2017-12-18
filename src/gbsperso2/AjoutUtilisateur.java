@@ -255,7 +255,7 @@ public class AjoutUtilisateur extends javax.swing.JDialog {
                 if (jComboBoxPosition.getSelectedIndex() + 1 == 2) {
                     leSalaire = 3500;
                 } else {
-                    leSalaire = 3500;
+                    leSalaire = 2500;
                 }
             }
             Integer anciennete = 2017-Integer.parseInt(jTextFieldAnneeEntree.getText());
