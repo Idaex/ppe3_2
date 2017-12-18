@@ -8,7 +8,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- *
+ * Classe permettant de créer un objet de type Personne et d'utiliser plusieurs méthodes permettant de comparer des chaines de caractères
  * @author nc
  */
 public class Personne {
@@ -159,6 +159,11 @@ public class Personne {
         this.positionentreprise = positionentreprise;
     }
 
+    /**
+     * Compare 2 chaines de caractères, et retourne un boolean.
+     * @param email
+     * @return
+     */
     public static boolean validateEmail(String email) {
 
         boolean status = false;
@@ -175,6 +180,11 @@ public class Personne {
 
     }
     
+    /**
+     * Compare 2 chaines de caractères, et retourne un boolean.
+     * @param telephone
+     * @return
+     */
     public static boolean validateTelephone(String telephone){
         boolean status = false;
         String TELEPHONE_PATTERN
@@ -188,6 +198,12 @@ public class Personne {
         }
         return status;
     }
+
+    /**
+     * Compare 2 chaines de caractères, et retourne un boolean.
+     * @param nom
+     * @return
+     */
     public static boolean validateNom(String nom){
         boolean status = false;
         String NOM_PATTERN
@@ -201,6 +217,12 @@ public class Personne {
         }
         return status;
     }
+
+    /**
+     * Compare 2 chaines de caractères, et retourne un boolean.
+     * @param prenom
+     * @return
+     */
     public static boolean validatePrenom(String prenom){
         boolean status = false;
         String PRENOM_PATTERN
@@ -214,6 +236,12 @@ public class Personne {
         }
         return status;
     }
+
+    /**
+     * Compare 2 chaines de caractères, et retourne un boolean.
+     * @param annee
+     * @return
+     */
     public static boolean validateAnneeEntree(String annee){
         boolean status = false;
         String ANNEE_PATTERN
@@ -227,6 +255,12 @@ public class Personne {
         }
         return status;
     }
+
+    /**
+     * Compare 2 chaines de caractères, et retourne un boolean.
+     * @param identifiant
+     * @return
+     */
     public static boolean validateIdentifiant(String identifiant){
         boolean status = false;
         String IDENTIFIANT_PATTERN
@@ -241,6 +275,11 @@ public class Personne {
         return status;
     }
     
+    /**
+     * Compare 2 chaines de caractères, et retourne un boolean.
+     * @param mdp
+     * @return
+     */
     public static boolean validateMdp(String mdp){
         boolean status = false;
         String MDP_PATTERN

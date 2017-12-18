@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * Classe permettant d'ajouter un utilisateur à la base de donnée
  * @author Idaex
  */
 public class AjoutUtilisateur extends javax.swing.JDialog {
@@ -66,7 +66,6 @@ public class AjoutUtilisateur extends javax.swing.JDialog {
         jButtonReinitialiser = new javax.swing.JButton();
         jButtonCreerUtilisateur = new javax.swing.JButton();
         jLabelMdp1 = new javax.swing.JLabel();
-        jTextFieldMdp = new javax.swing.JTextField();
         jLabelSalaire1 = new javax.swing.JLabel();
         jButtonCalculeSalaire = new javax.swing.JButton();
         jLabelEtatNom = new javax.swing.JLabel();
@@ -74,11 +73,14 @@ public class AjoutUtilisateur extends javax.swing.JDialog {
         jLabelEtatEmail = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabelEtatEmail1 = new javax.swing.JLabel();
         jLabelEtatTelephone = new javax.swing.JLabel();
         jLabelEtatAnneeEntree = new javax.swing.JLabel();
         jLabelEtatIdentifiant = new javax.swing.JLabel();
         jLabelEtatMdp = new javax.swing.JLabel();
+        jLabelEtatMdpCopie = new javax.swing.JLabel();
+        jPasswordField1 = new javax.swing.JPasswordField();
+        jPasswordFieldCopie = new javax.swing.JPasswordField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -165,6 +167,12 @@ public class AjoutUtilisateur extends javax.swing.JDialog {
             }
         });
 
+        jLabelEtatEmail.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        jLabelEtatTelephone.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        jLabelEtatAnneeEntree.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
         jLabelEtatIdentifiant.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         jLabelEtatMdp.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -173,82 +181,130 @@ public class AjoutUtilisateur extends javax.swing.JDialog {
             }
         });
 
+        jLabelEtatMdpCopie.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jLabelEtatMdpCopieKeyReleased(evt);
+            }
+        });
+
+        jPasswordField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jPasswordField1KeyReleased(evt);
+            }
+        });
+
+        jPasswordFieldCopie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordFieldCopieActionPerformed(evt);
+            }
+        });
+        jPasswordFieldCopie.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jPasswordFieldCopieKeyReleased(evt);
+            }
+        });
+
+        jLabel1.setText("Retaper :");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addComponent(jLabelEtatTelephone, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(551, 551, 551))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabelNom1)
-                                    .addGap(66, 66, 66)
-                                    .addComponent(jTextFieldNom))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabelPrenom1)
-                                    .addGap(48, 48, 48)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabelEtatPrenom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jTextFieldPrenom)))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabelEmail1)
-                                    .addGap(47, 47, 47)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jLabelEtatTelephone, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jTextFieldTelephone, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
-                                        .addComponent(jTextFieldEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
-                                        .addComponent(jLabelEtatEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabelAnneeEntree1)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabelEtatAnneeEntree, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jTextFieldAnneeEntree)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jLabelEtatEmail1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(0, 0, Short.MAX_VALUE)))))
-                            .addComponent(jButtonReinitialiser, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabelEtatNom, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(2, 2, 2))
-                            .addComponent(jLabelTelephone1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelEtatIdentifiant, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelEtatMdp, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(jLabelSalaire1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(57, 57, 57)
+                                .addComponent(jLabelPrenom1)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabelIdentifiant1)
-                                            .addComponent(jLabelMdp1))
-                                        .addGap(18, 18, 18))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabelRole1)
-                                            .addComponent(jLabelAdresse1)
-                                            .addComponent(jLabelPosition1))
-                                        .addGap(48, 48, 48)))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextFieldAdresse)
-                                    .addComponent(jTextFieldIdentifiant)
-                                    .addComponent(jComboBoxRole, 0, 140, Short.MAX_VALUE)
-                                    .addComponent(jComboBoxPosition, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextFieldMdp)))
-                            .addComponent(jButtonCalculeSalaire, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButtonCreerUtilisateur, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(69, Short.MAX_VALUE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(48, 48, 48)
+                                        .addComponent(jLabelEtatPrenom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                                        .addComponent(jTextFieldPrenom, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(103, 103, 103)
+                                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabelTelephone1)
+                                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGap(74, 74, 74))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(101, 101, 101)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabelNom1)
+                                .addGap(66, 66, 66)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabelEtatNom, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldNom, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(170, 170, 170)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jButtonCalculeSalaire, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButtonCreerUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabelEtatMdp, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(79, 79, 79))))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(jLabelAnneeEntree1)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jTextFieldAnneeEntree, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabelEtatAnneeEntree, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextFieldTelephone, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(251, 251, 251)
+                            .addComponent(jComboBoxPosition, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addComponent(jLabelEmail1)
+                                    .addGap(338, 338, 338)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabelRole1)
+                                        .addComponent(jLabelAdresse1)
+                                        .addComponent(jLabelPosition1))
+                                    .addGap(48, 48, 48))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addComponent(jLabelIdentifiant1)
+                                    .addGap(42, 42, 42))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addComponent(jLabelMdp1)
+                                    .addGap(25, 25, 25)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextFieldIdentifiant)
+                                .addComponent(jTextFieldAdresse, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabelEtatIdentifiant, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jComboBoxRole, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelEtatMdpCopie, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(52, 52, 52)
+                                .addComponent(jPasswordFieldCopie, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGap(27, 27, 27)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabelSalaire1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButtonReinitialiser, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGap(10, 10, 10)
+                            .addComponent(jLabelEtatEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(82, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -263,54 +319,62 @@ public class AjoutUtilisateur extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabelEtatNom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabelEtatIdentifiant, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldPrenom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelPrenom1)
                     .addComponent(jLabelMdp1)
-                    .addComponent(jTextFieldMdp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabelEtatPrenom, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(jLabelEtatMdp, javax.swing.GroupLayout.DEFAULT_SIZE, 21, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jLabelEtatPrenom, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
+                    .addComponent(jLabelEtatMdp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelEmail1)
+                    .addComponent(jPasswordFieldCopie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabelEtatMdpCopie, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelAdresse1)
-                    .addComponent(jTextFieldAdresse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jTextFieldAdresse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelEmail1)
+                    .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(8, 8, 8)
                 .addComponent(jLabelEtatEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(13, 13, 13)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelTelephone1)
-                    .addComponent(jTextFieldTelephone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelRole1)
-                    .addComponent(jComboBoxRole, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelEtatTelephone, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabelRole1)
+                        .addGap(59, 59, 59))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabelPosition1)
-                            .addComponent(jComboBoxPosition, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldAnneeEntree, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabelEtatEmail1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelAnneeEntree1, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabelEtatAnneeEntree, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                        .addGap(35, 35, 35)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jComboBoxRole, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jTextFieldTelephone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabelTelephone1))
+                                .addGap(1, 1, 1)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                        .addComponent(jLabelEtatTelephone, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)))
                 .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelAnneeEntree1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldAnneeEntree, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBoxPosition, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelPosition1))
+                .addGap(35, 35, 35)
+                .addComponent(jLabelEtatAnneeEntree, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelSalaire1)
                     .addComponent(jButtonCalculeSalaire))
-                .addGap(18, 18, 18)
+                .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonReinitialiser, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonCreerUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -328,9 +392,10 @@ public class AjoutUtilisateur extends javax.swing.JDialog {
         jTextFieldTelephone.setText("");
         jTextFieldAnneeEntree.setText("");
         jTextFieldIdentifiant.setText("");
-        jTextFieldMdp.setText("");
+        jPasswordField1.setText("");
         jLabelSalaire1.setText("Salaire : ? euros");
         jButtonCreerUtilisateur.setVisible(false);
+
     }//GEN-LAST:event_jButtonReinitialiserActionPerformed
 
     private void jButtonCreerUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCreerUtilisateurActionPerformed
@@ -347,55 +412,62 @@ public class AjoutUtilisateur extends javax.swing.JDialog {
                     } else {
                         if (jLabelEtatIdentifiant.getText() == "Identifiant non valide") {
                             JOptionPane.showMessageDialog(rootPane, "Un ou plusieurs champs incorrect, veuillez recommencer");
-                        }else{
+                        } else {
                             if (jLabelEtatMdp.getText() == "Mot de passe non valide") {
                                 JOptionPane.showMessageDialog(rootPane, "Un ou plusieurs champs incorrect, veuillez recommencer");
-                            }
-                        }
-                        try {
-                            //interrogation de la BD pour savoir si l'identifiant/mot de passe est correct
-                            //instanciation de la classe Driver du paquetage jdbc de mysql
-                            Class.forName("com.mysql.jdbc.Driver");
-                            //Chaine de connexion (prise dans l'onglet services)
-                            String connexionUrl = "jdbc:mysql://localhost/gsbperso?user=admin&password=wxcvbn";
-
-                            //etablissement de la connexion
-                            Connection maConnexion = (Connection) DriverManager.getConnection(connexionUrl);
-
-                            //requete
-                            Statement requete = maConnexion.createStatement();
-                            String identifiant = this.fenetre.leUtilisateur.getIdentif();
-                            String mdp = this.fenetre.leUtilisateur.getMdp();
-                            Integer leSalaire = 0;
-                            if (jComboBoxPosition.getSelectedIndex() + 1 == 1) {
-                                leSalaire = 5000;
                             } else {
-                                if (jComboBoxPosition.getSelectedIndex() + 1 == 2) {
-                                    leSalaire = 3500;
+                                if (jLabelEtatMdpCopie.getText() == "Les mots de passe ne correspondent pas") {
+
+                                    JOptionPane.showMessageDialog(rootPane, "Les deux mots de passe ne correspondent pas !");
                                 } else {
-                                    leSalaire = 2500;
+                                    try {
+                                        //interrogation de la BD pour savoir si l'identifiant/mot de passe est correct
+                                        //instanciation de la classe Driver du paquetage jdbc de mysql
+                                        Class.forName("com.mysql.jdbc.Driver");
+                                        //Chaine de connexion (prise dans l'onglet services)
+                                        String connexionUrl = "jdbc:mysql://localhost/gsbperso?user=admin&password=wxcvbn";
+
+                                        //etablissement de la connexion
+                                        Connection maConnexion = (Connection) DriverManager.getConnection(connexionUrl);
+
+                                        //requete
+                                        Statement requete = maConnexion.createStatement();
+                                        String identifiant = this.fenetre.leUtilisateur.getIdentif();
+                                        String mdp = this.fenetre.leUtilisateur.getMdp();
+                                        Integer leSalaire = 0;
+                                        if (jComboBoxPosition.getSelectedIndex() + 1 == 1) {
+                                            leSalaire = 5000;
+                                        } else {
+                                            if (jComboBoxPosition.getSelectedIndex() + 1 == 2) {
+                                                leSalaire = 3500;
+                                            } else {
+                                                leSalaire = 2500;
+                                            }
+                                        }
+                                        Integer anciennete = 2017 - Integer.parseInt(jTextFieldAnneeEntree.getText());
+                                        for (int i = 1; i <= anciennete; i++) {
+                                            leSalaire = leSalaire + (leSalaire * 3 / 100);
+                                        }
+                                        jButtonCreerUtilisateur.setVisible(true);
+                                        jLabelSalaire1.setText("Salaire : " + leSalaire.toString() + " euros");
+                                        requete.executeUpdate("insert into utilisateurs (nom, prenom, adresse_ville, telephone, email, annee_entree, identifiant, mot_de_passe, idrole, salaire, idposition)  "
+                                                + "values ('" + jTextFieldNom.getText() + "','" + jTextFieldPrenom.getText() + "', '" + jTextFieldAdresse.getText() + "', '" + jTextFieldTelephone.getText() + "', "
+                                                + "'" + jTextFieldEmail.getText() + "', '" + jTextFieldAnneeEntree.getText() + "', '" + jTextFieldIdentifiant.getText() + "', '" + Outils.md5(jPasswordField1.getText()) + "',"
+                                                + " '" + (jComboBoxRole.getSelectedIndex() + 1) + "', '" + leSalaire + "', '" + (jComboBoxPosition.getSelectedIndex() + 1) + "')");
+                                        JOptionPane.showMessageDialog(rootPane, "Utilisateur crée");
+                                        jButtonReinitialiser.doClick();
+                                    } catch (ClassNotFoundException ex) {
+                                        JOptionPane.showMessageDialog(rootPane, "Classe de connexion mysql non trouvee..." + ex.toString());
+                                    } catch (SQLException ex) {
+                                        JOptionPane.showMessageDialog(rootPane, "SQL exception ... " + ex.toString());
+                                    } catch (NoSuchAlgorithmException ex) {
+                                        Logger.getLogger(Connexion.class.getName()).log(Level.SEVERE, null, ex);
+                                    }
                                 }
                             }
-                            Integer anciennete = 2017 - Integer.parseInt(jTextFieldAnneeEntree.getText());
-                            for (int i = 1; i <= anciennete; i++) {
-                                leSalaire = leSalaire + (leSalaire * 3 / 100);
-                            }
-                            jButtonCreerUtilisateur.setVisible(true);
-                            jLabelSalaire1.setText("Salaire : " + leSalaire.toString() + " euros");
-                            requete.executeUpdate("insert into utilisateurs (nom, prenom, adresse_ville, telephone, email, annee_entree, identifiant, mot_de_passe, idrole, salaire, idposition)  "
-                                    + "values ('" + jTextFieldNom.getText() + "','" + jTextFieldPrenom.getText() + "', '" + jTextFieldAdresse.getText() + "', '" + jTextFieldTelephone.getText() + "', "
-                                    + "'" + jTextFieldEmail.getText() + "', '" + jTextFieldAnneeEntree.getText() + "', '" + jTextFieldIdentifiant.getText() + "', '" + Outils.md5(jTextFieldMdp.getText()) + "',"
-                                    + " '" + (jComboBoxRole.getSelectedIndex() + 1) + "', '" + leSalaire + "', '" + (jComboBoxPosition.getSelectedIndex() + 1) + "')");
-                            JOptionPane.showMessageDialog(rootPane, "Utilisateur crée");
-                            jButtonReinitialiser.doClick();
-                        } catch (ClassNotFoundException ex) {
-                            JOptionPane.showMessageDialog(rootPane, "Classe de connexion mysql non trouvee..." + ex.toString());
-                        } catch (SQLException ex) {
-                            JOptionPane.showMessageDialog(rootPane, "SQL exception ... " + ex.toString());
-                        } catch (NoSuchAlgorithmException ex) {
-                            Logger.getLogger(Connexion.class.getName()).log(Level.SEVERE, null, ex);
                         }
                     }
+
                 }
             }
         }
@@ -418,8 +490,7 @@ public class AjoutUtilisateur extends javax.swing.JDialog {
         for (int i = 1; i <= anciennete; i++) {
             leSalaire = leSalaire + (leSalaire * 3 / 100);
         }
-        JOptionPane.showMessageDialog(rootPane, "Salaire :" + leSalaire);
-
+        
         jButtonCreerUtilisateur.setVisible(true);
         jLabelSalaire1.setText("Salaire : " + leSalaire.toString() + " euros");
     }//GEN-LAST:event_jButtonCalculeSalaireActionPerformed
@@ -479,13 +550,41 @@ public class AjoutUtilisateur extends javax.swing.JDialog {
     }//GEN-LAST:event_jTextFieldIdentifiantKeyReleased
 
     private void jLabelEtatMdpKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jLabelEtatMdpKeyReleased
-        boolean status = this.fenetre.leUtilisateur.validateMdp(jTextFieldMdp.getText());
+        boolean status = this.fenetre.leUtilisateur.validateMdp(jPasswordField1.getText());
         if (status) {
             jLabelEtatMdp.setText("Mot de passe valide");
         } else {
             jLabelEtatMdp.setText("Mot de passe non valide");
         }
     }//GEN-LAST:event_jLabelEtatMdpKeyReleased
+
+    private void jLabelEtatMdpCopieKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jLabelEtatMdpCopieKeyReleased
+
+    }//GEN-LAST:event_jLabelEtatMdpCopieKeyReleased
+
+    private void jPasswordFieldCopieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldCopieActionPerformed
+        
+    }//GEN-LAST:event_jPasswordFieldCopieActionPerformed
+
+    private void jPasswordFieldCopieKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordFieldCopieKeyReleased
+        if(jPasswordField1.getText() == ""){
+            jLabelEtatMdpCopie.setText("");
+        }else{
+            if(jPasswordField1.getText().equals(jPasswordFieldCopie.getText())){
+                jLabelEtatMdpCopie.setText("Les mots de passe sont identiques");
+            }else{
+                jLabelEtatMdpCopie.setText("Les mots de passe ne correspondent pas");
+            }
+        }
+    }//GEN-LAST:event_jPasswordFieldCopieKeyReleased
+
+    private void jPasswordField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordField1KeyReleased
+        if(jPasswordField1.getText().equals(jPasswordFieldCopie.getText())){
+            jLabelEtatMdpCopie.setText("Les mots de passe sont identiques");
+        }else{
+            jLabelEtatMdpCopie.setText("Les mots de passe ne correspondent pas");
+        }
+    }//GEN-LAST:event_jPasswordField1KeyReleased
 
     /**
      * @param args the command line arguments
@@ -501,16 +600,24 @@ public class AjoutUtilisateur extends javax.swing.JDialog {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AjoutUtilisateur.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AjoutUtilisateur.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AjoutUtilisateur.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AjoutUtilisateur.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AjoutUtilisateur.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AjoutUtilisateur.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AjoutUtilisateur.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AjoutUtilisateur.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -535,6 +642,7 @@ public class AjoutUtilisateur extends javax.swing.JDialog {
     private javax.swing.JButton jButtonReinitialiser;
     private javax.swing.JComboBox<String> jComboBoxPosition;
     private javax.swing.JComboBox<String> jComboBoxRole;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabelAdresse1;
@@ -542,9 +650,9 @@ public class AjoutUtilisateur extends javax.swing.JDialog {
     private javax.swing.JLabel jLabelEmail1;
     private javax.swing.JLabel jLabelEtatAnneeEntree;
     private javax.swing.JLabel jLabelEtatEmail;
-    private javax.swing.JLabel jLabelEtatEmail1;
     private javax.swing.JLabel jLabelEtatIdentifiant;
     private javax.swing.JLabel jLabelEtatMdp;
+    private javax.swing.JLabel jLabelEtatMdpCopie;
     private javax.swing.JLabel jLabelEtatNom;
     private javax.swing.JLabel jLabelEtatPrenom;
     private javax.swing.JLabel jLabelEtatTelephone;
@@ -556,11 +664,12 @@ public class AjoutUtilisateur extends javax.swing.JDialog {
     private javax.swing.JLabel jLabelRole1;
     private javax.swing.JLabel jLabelSalaire1;
     private javax.swing.JLabel jLabelTelephone1;
+    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JPasswordField jPasswordFieldCopie;
     private javax.swing.JTextField jTextFieldAdresse;
     private javax.swing.JTextField jTextFieldAnneeEntree;
     private javax.swing.JTextField jTextFieldEmail;
     private javax.swing.JTextField jTextFieldIdentifiant;
-    private javax.swing.JTextField jTextFieldMdp;
     private javax.swing.JTextField jTextFieldNom;
     private javax.swing.JTextField jTextFieldPrenom;
     private javax.swing.JTextField jTextFieldTelephone;

@@ -18,7 +18,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * Classe permettant de modifier le role d'un employé, réservé aux directeurs
  * @author Idaex
  */
 public class ModifRole extends javax.swing.JDialog {

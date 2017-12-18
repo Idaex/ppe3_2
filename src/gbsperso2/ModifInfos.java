@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * Classe permettant de modifier les informations d'un utilisateurs.
  * @author Idaex
  */
 public class ModifInfos extends javax.swing.JDialog {

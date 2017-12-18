@@ -13,7 +13,7 @@ import java.sql.Statement;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * Classe permettant de modifier la position d'un employé, réservé aux responsables
  * @author Idaex
  */
 public class ModifPosition extends javax.swing.JDialog {

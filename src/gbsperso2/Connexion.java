@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 
 /**
- *
+ * Classe permettant de se connecter
  * @author nc
  */
 public class Connexion extends javax.swing.JDialog {

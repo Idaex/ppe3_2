@@ -10,7 +10,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- *
+ * Classe Outils, contenant des méthodes utilisables pour l'application
  * @author nc
  */
 public class Outils {

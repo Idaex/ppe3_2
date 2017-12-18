@@ -7,7 +7,7 @@ package gbsperso2;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * Classe contenant la fênetre principal de l'application.
  * @author nc
  */
 public class InterfaceGraphique extends javax.swing.JFrame {
@@ -510,6 +510,11 @@ public class InterfaceGraphique extends javax.swing.JFrame {
     private void jMenuAjoutUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuAjoutUtilisateurActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuAjoutUtilisateurActionPerformed
+
+    /**
+     * Méthode appelant la classe Connexion
+     * @param lutilisateur
+     */
     public void connecte(Personne lutilisateur) {
         //maj de l'etat de la connexion
         this.connecte = true;
@@ -545,6 +550,9 @@ public class InterfaceGraphique extends javax.swing.JFrame {
         }
     }
 
+    /**
+     *Méthode appelant la classe Deconnexion
+     */
     public void deconnecte() {
         this.connecte = false;
         this.nomjMenu.setText(null);
@@ -561,11 +569,17 @@ public class InterfaceGraphique extends javax.swing.JFrame {
 
     }
 
+    /**
+     *Méthode qui bloque la possibilité de se connecter et active la possibilité de se deconnecter
+     */
     public void majConnexion() {
         deconnexionMenuItem.setEnabled(this.connecte);
         connexionMenuItem.setEnabled(!this.connecte);
     }
 
+    /**
+     *Méthode qui met à jour les informations personnelles de l'utilisateur connecté.
+     */
     public void majModifInfos() {
         this.nomjMenu.setText("Connecté en tant que : " + leUtilisateur.getNom());
         this.nomjMenu.setEnabled(false);

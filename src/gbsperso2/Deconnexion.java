@@ -5,7 +5,7 @@
 package gbsperso2;
 
 /**
- *
+ * Méthode qui permet de se deconnecter.
  * @author nc
  */
 public class Deconnexion extends javax.swing.JDialog {
