@@ -376,6 +376,11 @@ public class InterfaceGraphique extends javax.swing.JFrame {
         jMenuActions.add(jMenuItemGererLesPositions);
 
         jMenuAjoutUtilisateur.setText("Ajouter un utilisateur");
+        jMenuAjoutUtilisateur.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuAjoutUtilisateurActionPerformed(evt);
+            }
+        });
         jMenuActions.add(jMenuAjoutUtilisateur);
 
         nomMenuBar.add(jMenuActions);
@@ -501,6 +506,10 @@ public class InterfaceGraphique extends javax.swing.JFrame {
         this.fenModifPosition = new ModifPosition(this, true);
         fenModifPosition.setVisible(true);
     }//GEN-LAST:event_jButtonGererLesPositionsActionPerformed
+
+    private void jMenuAjoutUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuAjoutUtilisateurActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuAjoutUtilisateurActionPerformed
     public void connecte(Personne lutilisateur) {
         //maj de l'etat de la connexion
         this.connecte = true;

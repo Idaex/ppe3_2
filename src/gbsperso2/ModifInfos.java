@@ -83,16 +83,68 @@ public class ModifInfos extends javax.swing.JDialog {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jButtonReinitialiser = new javax.swing.JButton();
+        jLabelEtatEmail = new javax.swing.JLabel();
+        jLabelEtatNom = new javax.swing.JLabel();
+        jLabelEtatTelephone = new javax.swing.JLabel();
+        jLabelEtatAnneeEntree = new javax.swing.JLabel();
+        jLabelEtatPrenom = new javax.swing.JLabel();
+        jLabelEtatIdentifiant = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jTextFieldNom.setText("Nom");
+        jTextFieldNom.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                jTextFieldNomInputMethodTextChanged(evt);
+            }
+        });
+        jTextFieldNom.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextFieldNomKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextFieldNomKeyReleased(evt);
+            }
+        });
 
         jTextFieldPrenom.setText("Prenom");
+        jTextFieldPrenom.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextFieldPrenomKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextFieldPrenomKeyReleased(evt);
+            }
+        });
 
         jTextFieldEmail.setText("Email");
+        jTextFieldEmail.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                jTextFieldEmailInputMethodTextChanged(evt);
+            }
+        });
+        jTextFieldEmail.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextFieldEmailKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextFieldEmailKeyReleased(evt);
+            }
+        });
 
         jTextFieldTelephone.setText("Téléphone");
+        jTextFieldTelephone.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextFieldTelephoneKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextFieldTelephoneKeyReleased(evt);
+            }
+        });
 
         jButtonValidModif.setText("Valider et modifier");
         jButtonValidModif.addActionListener(new java.awt.event.ActionListener() {
@@ -102,8 +154,21 @@ public class ModifInfos extends javax.swing.JDialog {
         });
 
         jTextFieldAnneeEntree.setText("Annee Entree");
+        jTextFieldAnneeEntree.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextFieldAnneeEntreeKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextFieldAnneeEntreeKeyReleased(evt);
+            }
+        });
 
         jTextFieldIdentifiant.setText("Identifiant");
+        jTextFieldIdentifiant.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextFieldIdentifiantKeyReleased(evt);
+            }
+        });
 
         jTextFieldAdresse.setText("Adresse");
         jTextFieldAdresse.addActionListener(new java.awt.event.ActionListener() {
@@ -141,28 +206,32 @@ public class ModifInfos extends javax.swing.JDialog {
             }
         });
 
+        jLabelEtatEmail.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        jLabelEtatNom.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        jLabelEtatTelephone.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        jLabelEtatAnneeEntree.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(263, 263, 263)
-                .addComponent(jButtonValidModif, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(63, 63, 63)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3))
-                        .addGap(53, 53, 53)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel4)
+                                .addComponent(jLabel1)
+                                .addComponent(jLabel2))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextFieldAnneeEntree, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(16, 16, 16)
+                                .addComponent(jLabel3)))
+                        .addGap(52, 52, 52)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(layout.createSequentialGroup()
@@ -170,18 +239,29 @@ public class ModifInfos extends javax.swing.JDialog {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jLabel9))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel8))
-                                    .addGroup(layout.createSequentialGroup()
                                         .addComponent(jTextFieldPrenom, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jLabel7))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jTextFieldNom, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jLabelEtatNom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jTextFieldNom, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel6)))
-                                .addGap(51, 51, 51))))
+                                        .addComponent(jLabel6))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jLabelEtatPrenom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jLabelEtatEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jTextFieldEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel8)))
+                                .addGap(51, 51, 51))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTextFieldAnneeEntree, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                                    .addComponent(jLabelEtatTelephone, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabelEtatAnneeEntree, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addGap(374, 374, 374)))
@@ -190,42 +270,59 @@ public class ModifInfos extends javax.swing.JDialog {
                     .addComponent(jTextFieldIdentifiant)
                     .addComponent(jTextFieldRole)
                     .addComponent(jTextFieldPosition)
-                    .addComponent(jButtonReinitialiser, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE))
+                    .addComponent(jButtonReinitialiser, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
+                    .addComponent(jLabelEtatIdentifiant, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(71, 71, 71))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(263, 263, 263)
+                .addComponent(jButtonValidModif, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(86, 86, 86)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldIdentifiant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel6))
-                .addGap(61, 61, 61)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabelEtatNom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabelEtatIdentifiant, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldPrenom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldAdresse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel7))
-                .addGap(65, 65, 65)
+                .addGap(18, 18, 18)
+                .addComponent(jLabelEtatPrenom, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(13, 13, 13)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldRole, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
-                    .addComponent(jLabel8))
-                .addGap(60, 60, 60)
+                    .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8)
+                    .addComponent(jTextFieldRole, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23)
+                .addComponent(jLabelEtatEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldTelephone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4)
                     .addComponent(jTextFieldPosition, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
-                .addGap(70, 70, 70)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabelEtatTelephone, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldAnneeEntree, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5)
                     .addComponent(jButtonReinitialiser, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelEtatAnneeEntree, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                 .addComponent(jButtonValidModif, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(79, 79, 79))
         );
@@ -234,51 +331,71 @@ public class ModifInfos extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonValidModifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonValidModifActionPerformed
-        try {
-            //interrogation de la BD pour savoir si l'identifiant/mot de passe est correct
-            //instanciation de la classe Driver du paquetage jdbc de mysql
-            Class.forName("com.mysql.jdbc.Driver");
-            //Chaine de connexion (prise dans l'onglet services)
-            String connexionUrl = "jdbc:mysql://localhost/gsbperso?user=admin&password=wxcvbn";
+        if (jLabelEtatNom.getText() == "Nom non valide") {
+            JOptionPane.showMessageDialog(rootPane, "Un ou plusieurs champs incorrect, veuillez recommencer");
+        } else {
+            if (jLabelEtatPrenom.getText() == "Prenom non valide") {
+                JOptionPane.showMessageDialog(rootPane, "Un ou plusieurs champs incorrect, veuillez recommencer");
+            } else {
+                if (jLabelEtatEmail.getText() == "Email non valide") {
+                    JOptionPane.showMessageDialog(rootPane, "Un ou plusieurs champs incorrect, veuillez recommencer");
+                } else {
+                    if (jLabelEtatTelephone.getText() == "Téléphone non valide") {
+                    } else {
+                        if (jLabelEtatIdentifiant.getText() == "Identifiant non valide") {
+                            JOptionPane.showMessageDialog(rootPane, "Un ou plusieurs champs incorrect, veuillez recommencer");
+                        } else {
 
-            //etablissement de la connexion
-            Connection maConnexion = (Connection) DriverManager.getConnection(connexionUrl);
+                            try {
+                                //interrogation de la BD pour savoir si l'identifiant/mot de passe est correct
+                                //instanciation de la classe Driver du paquetage jdbc de mysql
+                                Class.forName("com.mysql.jdbc.Driver");
+                                //Chaine de connexion (prise dans l'onglet services)
+                                String connexionUrl = "jdbc:mysql://localhost/gsbperso?user=admin&password=wxcvbn";
 
-            //requete
-            Statement requete = maConnexion.createStatement();
-            String identifiant = this.fenetre.leUtilisateur.getIdentif();
-            String mdp = this.fenetre.leUtilisateur.getMdp();
+                                //etablissement de la connexion
+                                Connection maConnexion = (Connection) DriverManager.getConnection(connexionUrl);
 
-            //application du cryptage md5 au mdp
-            // ici on appelle md5 membre static de la classe outils
-            mdp = Outils.md5(mdp);
-            requete.executeUpdate("update utilisateurs set nom='" + jTextFieldNom.getText() + "', prenom='" + jTextFieldPrenom.getText() + "', email='" + jTextFieldEmail.getText() + "', telephone='" + jTextFieldTelephone.getText() + "' , adresse_ville='" + jTextFieldAdresse.getText() + "', identifiant='" + jTextFieldIdentifiant.getText() + "' , telephone='" + jTextFieldTelephone.getText() + "' where identifiant='" + identifiant + "' and mot_de_passe='" + mdp + "'");
-            // requete.executeUpdate("update utilisateurs set nom='"+jTextFieldNom.getText()+"', prenom='"+jTextFieldPrenom.getText()+"', email='"+jTextFieldEmail.getText()+"', telephone='"+jTextFieldTelephone.getText()+"',   where identifiant='" + identifiant + "' and mot_de_passe='" + mdp + "'");
-            //if (lignesRetour.next()) {
-            // String nom = lignesRetour.getString("nom");
+                                //requete
+                                Statement requete = maConnexion.createStatement();
+                                String identifiant = this.fenetre.leUtilisateur.getIdentif();
+                                String mdp = this.fenetre.leUtilisateur.getMdp();
 
-            //  } else {
-            JOptionPane.showMessageDialog(rootPane, "Modification effectué");
-            // };
+                                //application du cryptage md5 au mdp
+                                // ici on appelle md5 membre static de la classe outils
+                                mdp = Outils.md5(mdp);
+                                requete.executeUpdate("update utilisateurs set nom='" + jTextFieldNom.getText() + "', prenom='" + jTextFieldPrenom.getText() + "', email='" + jTextFieldEmail.getText() + "', telephone='" + jTextFieldTelephone.getText() + "' , adresse_ville='" + jTextFieldAdresse.getText() + "', identifiant='" + jTextFieldIdentifiant.getText() + "' , telephone='" + jTextFieldTelephone.getText() + "' where identifiant='" + identifiant + "' and mot_de_passe='" + mdp + "'");
+                                // requete.executeUpdate("update utilisateurs set nom='"+jTextFieldNom.getText()+"', prenom='"+jTextFieldPrenom.getText()+"', email='"+jTextFieldEmail.getText()+"', telephone='"+jTextFieldTelephone.getText()+"',   where identifiant='" + identifiant + "' and mot_de_passe='" + mdp + "'");
+                                //if (lignesRetour.next()) {
+                                // String nom = lignesRetour.getString("nom");
 
-        } catch (ClassNotFoundException ex) {
-            JOptionPane.showMessageDialog(rootPane, "Classe de connexion mysql non trouvee..." + ex.toString());
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(rootPane, "SQL exception ... " + ex.toString());
-        } catch (NoSuchAlgorithmException ex) {
-            Logger.getLogger(Connexion.class.getName()).log(Level.SEVERE, null, ex);
+                                //  } else {
+                                JOptionPane.showMessageDialog(rootPane, "Modification effectué");
+                                // };
+
+                            } catch (ClassNotFoundException ex) {
+                                JOptionPane.showMessageDialog(rootPane, "Classe de connexion mysql non trouvee..." + ex.toString());
+                            } catch (SQLException ex) {
+                                JOptionPane.showMessageDialog(rootPane, "SQL exception ... " + ex.toString());
+                            } catch (NoSuchAlgorithmException ex) {
+                                Logger.getLogger(Connexion.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+
+                            this.fenetre.leUtilisateur.setNom(jTextFieldNom.getText());
+                            this.fenetre.leUtilisateur.setPrenom(jTextFieldPrenom.getText());
+                            this.fenetre.leUtilisateur.setCourriel(jTextFieldEmail.getText());
+                            this.fenetre.leUtilisateur.setTelephone(Integer.parseInt(jTextFieldTelephone.getText()));
+                            this.fenetre.leUtilisateur.setAnneedentree(Integer.parseInt(jTextFieldAnneeEntree.getText()));
+                            this.fenetre.leUtilisateur.setAdresse(jTextFieldAdresse.getText());
+                            this.fenetre.leUtilisateur.setIdentif(jTextFieldIdentifiant.getText());
+                            this.fenetre.leUtilisateur.setRoleentr(jTextFieldRole.getText());
+                            this.fenetre.leUtilisateur.setPosi(jTextFieldPosition.getText());
+                            this.fenetre.majModifInfos();
+                        }
+                    }
+                }
+            }
         }
-
-        this.fenetre.leUtilisateur.setNom(jTextFieldNom.getText());
-        this.fenetre.leUtilisateur.setPrenom(jTextFieldPrenom.getText());
-        this.fenetre.leUtilisateur.setCourriel(jTextFieldEmail.getText());
-        this.fenetre.leUtilisateur.setTelephone(Integer.parseInt(jTextFieldTelephone.getText()));
-        this.fenetre.leUtilisateur.setAnneedentree(Integer.parseInt(jTextFieldAnneeEntree.getText()));
-        this.fenetre.leUtilisateur.setAdresse(jTextFieldAdresse.getText());
-        this.fenetre.leUtilisateur.setIdentif(jTextFieldIdentifiant.getText());
-        this.fenetre.leUtilisateur.setRoleentr(jTextFieldRole.getText());
-        this.fenetre.leUtilisateur.setPosi(jTextFieldPosition.getText());
-        this.fenetre.majModifInfos();
 
 
     }//GEN-LAST:event_jButtonValidModifActionPerformed
@@ -298,6 +415,89 @@ public class ModifInfos extends javax.swing.JDialog {
         jTextFieldPosition.setText(leUtilisateurModif.getPosi());
         jTextFieldIdentifiant.setText(leUtilisateurModif.getIdentif());
     }//GEN-LAST:event_jButtonReinitialiserActionPerformed
+
+    private void jTextFieldEmailInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_jTextFieldEmailInputMethodTextChanged
+
+    }//GEN-LAST:event_jTextFieldEmailInputMethodTextChanged
+
+    private void jTextFieldEmailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldEmailKeyPressed
+
+    }//GEN-LAST:event_jTextFieldEmailKeyPressed
+
+    private void jTextFieldNomInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_jTextFieldNomInputMethodTextChanged
+
+    }//GEN-LAST:event_jTextFieldNomInputMethodTextChanged
+
+    private void jTextFieldNomKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldNomKeyPressed
+
+    }//GEN-LAST:event_jTextFieldNomKeyPressed
+
+    private void jTextFieldTelephoneKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldTelephoneKeyPressed
+
+    }//GEN-LAST:event_jTextFieldTelephoneKeyPressed
+
+    private void jTextFieldPrenomKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldPrenomKeyPressed
+
+    }//GEN-LAST:event_jTextFieldPrenomKeyPressed
+
+    private void jTextFieldAnneeEntreeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldAnneeEntreeKeyPressed
+
+    }//GEN-LAST:event_jTextFieldAnneeEntreeKeyPressed
+
+
+    private void jTextFieldNomKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldNomKeyReleased
+        boolean status = leUtilisateurModif.validateNom(jTextFieldNom.getText());
+        if (status) {
+            jLabelEtatNom.setText("Nom valide");
+        } else {
+            jLabelEtatNom.setText("Nom non valide");
+        }
+    }//GEN-LAST:event_jTextFieldNomKeyReleased
+
+    private void jTextFieldPrenomKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldPrenomKeyReleased
+        boolean status = leUtilisateurModif.validatePrenom(jTextFieldPrenom.getText());
+        if (status) {
+            jLabelEtatPrenom.setText("Prenom valide");
+        } else {
+            jLabelEtatPrenom.setText("Prenom non valide");
+        }
+    }//GEN-LAST:event_jTextFieldPrenomKeyReleased
+
+    private void jTextFieldEmailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldEmailKeyReleased
+        boolean status = leUtilisateurModif.validateEmail(jTextFieldEmail.getText());
+        if (status) {
+            jLabelEtatEmail.setText("Email valide");
+        } else {
+            jLabelEtatEmail.setText("Email non valide");
+        }
+    }//GEN-LAST:event_jTextFieldEmailKeyReleased
+
+    private void jTextFieldAnneeEntreeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldAnneeEntreeKeyReleased
+        boolean status = leUtilisateurModif.validateAnneeEntree(jTextFieldAnneeEntree.getText());
+        if (status) {
+            jLabelEtatAnneeEntree.setText("Année valide");
+        } else {
+            jLabelEtatAnneeEntree.setText("Année non valide");
+        }
+    }//GEN-LAST:event_jTextFieldAnneeEntreeKeyReleased
+
+    private void jTextFieldTelephoneKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldTelephoneKeyReleased
+        boolean status = leUtilisateurModif.validateTelephone(jTextFieldTelephone.getText());
+        if (status) {
+            jLabelEtatTelephone.setText("Téléphone valide");
+        } else {
+            jLabelEtatTelephone.setText("Téléphone non valide");
+        }
+    }//GEN-LAST:event_jTextFieldTelephoneKeyReleased
+
+    private void jTextFieldIdentifiantKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldIdentifiantKeyReleased
+        boolean status = this.fenetre.leUtilisateur.validateIdentifiant(jTextFieldIdentifiant.getText());
+        if (status) {
+            jLabelEtatIdentifiant.setText("Identifiant valide");
+        } else {
+            jLabelEtatIdentifiant.setText("Identifiant non valide");
+        }
+    }//GEN-LAST:event_jTextFieldIdentifiantKeyReleased
 
     /**
      * @param args the command line arguments
@@ -341,8 +541,7 @@ public class ModifInfos extends javax.swing.JDialog {
             }
         });
     }
-    
-    
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonReinitialiser;
@@ -356,6 +555,12 @@ public class ModifInfos extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabelEtatAnneeEntree;
+    private javax.swing.JLabel jLabelEtatEmail;
+    private javax.swing.JLabel jLabelEtatIdentifiant;
+    private javax.swing.JLabel jLabelEtatNom;
+    private javax.swing.JLabel jLabelEtatPrenom;
+    private javax.swing.JLabel jLabelEtatTelephone;
     private javax.swing.JTextField jTextFieldAdresse;
     private javax.swing.JTextField jTextFieldAnneeEntree;
     private javax.swing.JTextField jTextFieldEmail;

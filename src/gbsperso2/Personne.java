@@ -4,6 +4,9 @@
  */
 package gbsperso2;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  *
  * @author nc
@@ -156,4 +159,100 @@ public class Personne {
         this.positionentreprise = positionentreprise;
     }
 
+    public static boolean validateEmail(String email) {
+
+        boolean status = false;
+        String EMAIL_PATTERN
+                = "^[\\w-\\.+]*[\\w-\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
+        Pattern pattern = Pattern.compile(EMAIL_PATTERN);
+        Matcher matcher = pattern.matcher(email);
+        if (matcher.matches()) {
+            status = true;
+        } else {
+            status = false;
+        }
+        return status;
+
+    }
+    
+    public static boolean validateTelephone(String telephone){
+        boolean status = false;
+        String TELEPHONE_PATTERN
+                = "^[0-9]{10}$";
+        Pattern pattern = Pattern.compile(TELEPHONE_PATTERN);
+        Matcher matcher = pattern.matcher(telephone);
+        if (matcher.matches()) {
+            status = true;
+        } else {
+            status = false;
+        }
+        return status;
+    }
+    public static boolean validateNom(String nom){
+        boolean status = false;
+        String NOM_PATTERN
+                = "[A-Za-z ]{3,25}";
+        Pattern pattern = Pattern.compile(NOM_PATTERN);
+        Matcher matcher = pattern.matcher(nom);
+        if (matcher.matches()) {
+            status = true;
+        } else {
+            status = false;
+        }
+        return status;
+    }
+    public static boolean validatePrenom(String prenom){
+        boolean status = false;
+        String PRENOM_PATTERN
+                = "[A-Za-z ]{3,25}";
+        Pattern pattern = Pattern.compile(PRENOM_PATTERN);
+        Matcher matcher = pattern.matcher(prenom);
+        if (matcher.matches()) {
+            status = true;
+        } else {
+            status = false;
+        }
+        return status;
+    }
+    public static boolean validateAnneeEntree(String annee){
+        boolean status = false;
+        String ANNEE_PATTERN
+                = "[0-9]{4}";
+        Pattern pattern = Pattern.compile(ANNEE_PATTERN);
+        Matcher matcher = pattern.matcher(annee);
+        if (matcher.matches()) {
+            status = true;
+        } else {
+            status = false;
+        }
+        return status;
+    }
+    public static boolean validateIdentifiant(String identifiant){
+        boolean status = false;
+        String IDENTIFIANT_PATTERN
+                = "^[A-Za-z0-9_]{6,15}$";
+        Pattern pattern = Pattern.compile(IDENTIFIANT_PATTERN);
+        Matcher matcher = pattern.matcher(identifiant);
+        if (matcher.matches()) {
+            status = true;
+        } else {
+            status = false;
+        }
+        return status;
+    }
+    
+    public static boolean validateMdp(String mdp){
+        boolean status = false;
+        String MDP_PATTERN
+                = "^[A-Za-z0-9_]{6,12}$";
+        Pattern pattern = Pattern.compile(MDP_PATTERN);
+        Matcher matcher = pattern.matcher(mdp);
+        if (matcher.matches()) {
+            status = true;
+        } else {
+            status = false;
+        }
+        return status;
+    }
+    
 }
