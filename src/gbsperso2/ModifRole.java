@@ -53,6 +53,7 @@ public class ModifRole extends javax.swing.JDialog {
         jLabel1 = new javax.swing.JLabel();
         jButtonPromouvoir = new javax.swing.JButton();
         jButtonRetrograder = new javax.swing.JButton();
+        jTextFieldIdentifiant = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -77,7 +78,7 @@ public class ModifRole extends javax.swing.JDialog {
         jLabel1Etat.setText("Aucun utilisateur sélectionné");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setText("Chercher l'utilisateur grâce au nom et au prenom ");
+        jLabel1.setText("Chercher l'utilisateur grâce à l'identifiant au nom et au prenom ");
 
         jButtonPromouvoir.setText("Promouvoir en Responsable");
         jButtonPromouvoir.addActionListener(new java.awt.event.ActionListener() {
@@ -93,50 +94,56 @@ public class ModifRole extends javax.swing.JDialog {
             }
         });
 
+        jTextFieldIdentifiant.setText("Identifiant");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(76, 76, 76)
-                .addComponent(jTextField1Nom, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(70, 70, 70)
-                .addComponent(jTextField1Prenom, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
-                .addComponent(jButtonChercher, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(64, 64, 64))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(102, 102, 102)
+                .addGap(88, 88, 88)
                 .addComponent(jButtonPromouvoir)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButtonRetrograder)
-                .addGap(114, 114, 114))
+                .addGap(108, 108, 108))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTextFieldIdentifiant, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(102, 102, 102)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonChercher, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField1Nom, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                .addComponent(jTextField1Prenom, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(58, 58, 58))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(176, 176, 176))
+                .addGap(125, 125, 125))
             .addGroup(layout.createSequentialGroup()
-                .addGap(129, 129, 129)
+                .addGap(131, 131, 131)
                 .addComponent(jLabel1Etat, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
+                .addGap(30, 30, 30)
                 .addComponent(jLabel1)
-                .addGap(40, 40, 40)
+                .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField1Nom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField1Prenom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonChercher))
-                .addGap(39, 39, 39)
+                    .addComponent(jTextFieldIdentifiant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(50, 50, 50)
+                .addComponent(jButtonChercher)
+                .addGap(41, 41, 41)
                 .addComponent(jLabel1Etat, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45)
+                .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonPromouvoir)
                     .addComponent(jButtonRetrograder))
-                .addContainerGap(370, Short.MAX_VALUE))
+                .addContainerGap(298, Short.MAX_VALUE))
         );
 
         pack();
@@ -161,8 +168,9 @@ public class ModifRole extends javax.swing.JDialog {
             Statement requete = maConnexion.createStatement();
             String nom1 = jTextField1Nom.getText();
             String prenom1 = jTextField1Prenom.getText();
+            String identifiant1 = jTextFieldIdentifiant.getText();
 
-            ResultSet lignesRet = requete.executeQuery("select * from utilisateurs where nom='" + nom1 + "' and prenom='" + prenom1 + "'");
+            ResultSet lignesRet = requete.executeQuery("select * from utilisateurs where nom='" + nom1 + "' and prenom='" + prenom1 + "' and identifiant='" + identifiant1 + "'");
 
             lignesRet.last();
             //on récupère le numéro de la ligne 
@@ -312,5 +320,6 @@ public class ModifRole extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel1Etat;
     private javax.swing.JTextField jTextField1Nom;
     private javax.swing.JTextField jTextField1Prenom;
+    private javax.swing.JTextField jTextFieldIdentifiant;
     // End of variables declaration//GEN-END:variables
 }

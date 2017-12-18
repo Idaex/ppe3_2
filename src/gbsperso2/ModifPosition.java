@@ -49,6 +49,7 @@ public class ModifPosition extends javax.swing.JDialog {
         jButtonCadre = new javax.swing.JButton();
         jButtonNonCadre = new javax.swing.JButton();
         jLabel1Etat = new javax.swing.JLabel();
+        jTextField1Identifiant = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -64,7 +65,7 @@ public class ModifPosition extends javax.swing.JDialog {
         });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setText("Chercher l'utilisateur grâce au nom et au prenom");
+        jLabel1.setText("Chercher l'utilisateur grâce à l'identifiant au nom et au prenom");
 
         jButtonDirigeant.setText("Passer dirigeant");
         jButtonDirigeant.addActionListener(new java.awt.event.ActionListener() {
@@ -90,55 +91,66 @@ public class ModifPosition extends javax.swing.JDialog {
         jLabel1Etat.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1Etat.setText("Aucun utilisateur selectionné");
 
+        jTextField1Identifiant.setText("Identifiant");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(173, 173, 173))
+                .addGap(82, 82, 82)
+                .addComponent(jTextField1Identifiant, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
+                .addComponent(jTextField1Nom, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(291, 291, 291))
             .addGroup(layout.createSequentialGroup()
-                .addGap(94, 94, 94)
+                .addGap(96, 96, 96)
+                .addComponent(jButtonDirigeant)
+                .addGap(108, 108, 108)
+                .addComponent(jButtonCadre)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(124, 124, 124))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButtonNonCadre)
+                        .addGap(84, 84, 84))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jTextField1Prenom, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(54, 54, 54))))
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jTextField1Nom, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(87, 87, 87)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1Etat)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextField1Prenom, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButtonDirigeant)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
-                        .addComponent(jButtonCadre)
-                        .addGap(93, 93, 93)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1Chercher, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonNonCadre))
-                        .addGap(75, 75, 75))))
+                        .addGap(281, 281, 281)
+                        .addComponent(jLabel1Etat))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(304, 304, 304)
+                        .addComponent(jButton1Chercher, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addGap(25, 25, 25)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField1Prenom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1Chercher)
-                    .addComponent(jTextField1Nom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(51, 51, 51)
+                    .addComponent(jTextField1Nom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField1Identifiant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(45, 45, 45)
+                .addComponent(jButton1Chercher)
+                .addGap(41, 41, 41)
                 .addComponent(jLabel1Etat)
-                .addGap(48, 48, 48)
+                .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonCadre)
                     .addComponent(jButtonNonCadre)
                     .addComponent(jButtonDirigeant))
-                .addContainerGap(340, Short.MAX_VALUE))
+                .addContainerGap(289, Short.MAX_VALUE))
         );
 
         pack();
@@ -159,8 +171,8 @@ public class ModifPosition extends javax.swing.JDialog {
             Statement requete = maConnexion.createStatement();
             String nom1 = jTextField1Nom.getText();
             String prenom1 = jTextField1Prenom.getText();
-
-            ResultSet lignesRet = requete.executeQuery("select * from utilisateurs where nom='" + nom1 + "' and prenom='" + prenom1 + "'");
+            String identifiant1= jTextField1Identifiant.getText();
+            ResultSet lignesRet = requete.executeQuery("select * from utilisateurs where nom='" + nom1 + "' and prenom='" + prenom1 +"' and identifiant='" + identifiant1 + "'");
 
             lignesRet.last();
             //on récupère le numéro de la ligne 
@@ -359,6 +371,7 @@ public class ModifPosition extends javax.swing.JDialog {
     private javax.swing.JButton jButtonNonCadre;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel1Etat;
+    private javax.swing.JTextField jTextField1Identifiant;
     private javax.swing.JTextField jTextField1Nom;
     private javax.swing.JTextField jTextField1Prenom;
     // End of variables declaration//GEN-END:variables
