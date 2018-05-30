@@ -376,6 +376,11 @@ public class InterfaceGraphique extends javax.swing.JFrame {
         jMenuActions.add(jMenuItemGererLesPositions);
 
         jMenuAjoutUtilisateur.setText("Ajouter un utilisateur");
+        jMenuAjoutUtilisateur.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuAjoutUtilisateurMouseClicked(evt);
+            }
+        });
         jMenuAjoutUtilisateur.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuAjoutUtilisateurActionPerformed(evt);
@@ -508,8 +513,12 @@ public class InterfaceGraphique extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonGererLesPositionsActionPerformed
 
     private void jMenuAjoutUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuAjoutUtilisateurActionPerformed
-        // TODO add your handling code here:
+        jButtonAjoutUtilisateur.doClick();
     }//GEN-LAST:event_jMenuAjoutUtilisateurActionPerformed
+
+    private void jMenuAjoutUtilisateurMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuAjoutUtilisateurMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuAjoutUtilisateurMouseClicked
 
     /**
      * Méthode appelant la classe Connexion
@@ -566,6 +575,7 @@ public class InterfaceGraphique extends javax.swing.JFrame {
         jMenuItemGérerLesRoles.setVisible(false);
         jMenuItemGererLesPositions.setVisible(false);
         jButtonGererLesPositions.setVisible(false);
+        jMenuAjoutUtilisateur.setVisible(false);
 
     }
 
